@@ -71,5 +71,5 @@ return [
     'flash.error'    => 'Error',
     'flash.warning'  => 'Warning',
     'flash.info'     => 'Info',
-
+    'loading' => 'Loading',
 ];

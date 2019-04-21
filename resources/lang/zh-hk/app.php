@@ -74,4 +74,5 @@ return [
     'flash.warning'  => '警告',
     'flash.info'     => '信息',
 
+    'loading' => '資源加載中',
 ];
