@@ -1,6 +1,12 @@
 <body  class="g2Bg" >
 <section id="main">
-    <div class="loginBtn btn" style="width: 13.7%"><a href="{{ route('pc.login') }}"><img src="{!! theme_asset_lang("images/login-a.png") !!}" width="100%" alt=""></a></div>
+    <div class="loginBtn btn" style="width: 13.7%">
+        @if(Auth::user())
+        <a href="{{ route('pc.logout') }}"><img src="{!! theme_asset_lang("images/logout.png") !!}" width="100%" alt=""></a>
+        @else
+            <a href="{{ route('pc.login') }}"><img src="{!! theme_asset_lang("images/login-a.png") !!}" width="100%" alt=""></a>
+        @endif
+    </div>
     <div class="index-btn">
         <div class="lau-box fb-clearfix" style="width: 17.7%">
             <div class="lau-cn btn" style="width: 49%">
