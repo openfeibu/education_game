@@ -27,10 +27,10 @@
 
         </div>
         <div class="start btn" style="width: 17.7%">
-            <a href="{{ route('pc.levels',['lang' => 'zh-hk']) }}" ><img src="{!! theme_asset_lang("images/start.png") !!}" width="100%" alt=""></a>
+            <a href="{{ route('pc.levels',['lang' => App::getLocale()]) }}" ><img src="{!! theme_asset_lang("images/start.png") !!}" width="100%" alt=""></a>
         </div>
         <div class="guanka btn" style="width: 17.7%">
-            <a href="{{ route('pc.levels',['lang' => 'zh-hk']) }}"><img src="{!! theme_asset_lang("images/choose.png") !!}" width="100%" alt=""></a>
+            <a href="{{ route('pc.levels',['lang' => App::getLocale()]) }}"><img src="{!! theme_asset_lang("images/choose.png") !!}" width="100%" alt=""></a>
         </div>
     </div>
 </section>

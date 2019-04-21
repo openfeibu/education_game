@@ -10,7 +10,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <p> 資源加載中... <br> <span>1</span>%</p>
+            <p> {{ trans('app.loading') }}... <br> <span>1</span>%</p>
         </div>
 
     </div>
