@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="question-power2 gdownIn fb-clearfix">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -64,7 +64,7 @@
                 <p class="gcenterIn" style="width: 50.7%"><img src="{!! theme_asset_lang("images/g2-8-1.png") !!}" alt=""></p>
                 <br/>
                 <div class="question-power3  fb-clearfix delay-1 gdownIn">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -77,7 +77,7 @@
                 <p class="gcenterIn" style="width: 50.7%"><img src="{!! theme_asset_lang("images/g2-8-2.png") !!}" alt=""></p>
                 <br/>
                 <div class="question-power3  fb-clearfix delay-1 gdownIn">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -97,7 +97,7 @@
                 <p class="gcenterIn delay-2" style="width: 56%"><img src="{!! theme_asset_lang("images/g2-10.png") !!}" alt=""></p>
                 <br/>
                 <div class="question-power3  fb-clearfix delay-1 gdownIn">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -112,7 +112,7 @@
                 <p class="gcenterIn delay-2" style="width: 30.4%"><img src="{!! theme_asset_lang("images/g2-12.png") !!}" width="100%" alt=""></p>
                 <br/>
                 <div class="question-power3  fb-clearfix delay-1 gdownIn" >
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -138,7 +138,7 @@
                 <br/>
 
                 <div class="question-power3  fb-clearfix delay-1 gdownIn">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
@@ -152,7 +152,7 @@
                 <br>
 
                 <div class="question-power3  fb-clearfix  delay-1 gdownIn" style="margin-top: 0">
-                    <div class="question-home bbtn"><a href="index.html"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
