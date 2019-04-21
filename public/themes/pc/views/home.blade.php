@@ -46,8 +46,11 @@
 
             }
             $(".lau-en").addClass("active2").find("img").attr("src","{!! theme_asset_lang("images/eno.png") !!}");
-
+            @if(Auth::user())
+            $(".loginBtn").find("img").attr("src","{!! theme_asset("images/logout.png") !!}")
+            @else
             $(".loginBtn").find("img").attr("src","{!! theme_asset("images/login-a.png") !!}")
+            @endif
             $(".start ").find("img").attr("src","{!! theme_asset("images/start.png") !!}")
             $(".start ").find("a").attr("href","{{ route('pc.levels',['lang' => 'zh-hk']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/choose.png") !!}")
@@ -57,8 +60,12 @@
             if($(this).hasClass("active2")){
                 $(this).removeClass("active2").find("img").attr("src","{!! theme_asset_lang("images/en.png") !!}");;
             }
-            $(".lau-cn").addClass("active2").find("img").attr("src","{!! theme_asset_lang("images/cno.png") !!}");;
+            $(".lau-cn").addClass("active2").find("img").attr("src","{!! theme_asset_lang("images/cno.png") !!}");
+            @if(Auth::user())
+            $(".loginBtn").find("img").attr("src","{!! theme_asset("images/en/logout.png") !!}")
+            @else
             $(".loginBtn").find("img").attr("src","{!! theme_asset("images/en/login-a.png") !!}")
+            @endif
             $(".start ").find("img").attr("src","{!! theme_asset("images/en/start.png") !!}")
             $(".start ").find("a").attr("href","{{ route('pc.levels',['lang' => 'en']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/en/choose.png") !!}")
