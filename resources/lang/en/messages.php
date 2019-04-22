@@ -38,4 +38,7 @@ return [
         'no_complete' => 'Please complete the form'
     ],
     'internal_server_error' => 'Internal Server Error',
+    'video_loading' => 'Loading. Unity can be when the bottom left corner of the replay ',
+    'choose_option' => 'Please choose your answer',
+    'enter_answer' => 'Please enter your answer',
 ];

@@ -39,4 +39,9 @@ return [
         'no_complete' => '請完善信息後提交'
     ],
     'internal_server_error' => '服务器出错',
+
+    'video_loading' => 'The network is delayed. When finished, you can click the lower left corner to play video again',
+
+    'choose_option' => '請先選擇答案',
+    'enter_answer' => '請输入答案',
 ];
