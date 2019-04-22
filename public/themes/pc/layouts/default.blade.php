@@ -20,7 +20,7 @@
     <title>{{ setting('station_name') }} {!! Theme::getTitle() !!}</title>
     <meta name="Keywords" content="" />
     <meta name="Description" content="" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
     {!! Theme::asset()->styles() !!}
     {!! Theme::asset()->scripts() !!}
     <!-- wx -->
