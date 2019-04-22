@@ -44,6 +44,7 @@ $(function(){
   $(window).resize(function(){
     resizeFun()
   })
+    /*
   var fileList = [
     "images/weBg.jpg",
     "images/startBtn.png",
@@ -57,7 +58,7 @@ $(function(){
 
     loader.start();
     // 加载完成
-
+*/
 
 })
 

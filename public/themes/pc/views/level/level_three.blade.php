@@ -25,6 +25,7 @@
         </div>
     </div>
     <div id="g3-park2">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box" >
             <video id="c1" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c1.mp4") !!}"></video>
         </div>
@@ -66,26 +67,31 @@
 
     </div>
     <div id="g3-park4">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="c2-box" class="video-box" >
             <video id="c2" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c2.mp4") !!}"></video>
         </div>
     </div>
     <div id="g3-park5">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="c3-box" class="video-box" >
             <video id="c3" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c3.mp4") !!}"></video>
         </div>
     </div>
     <div id="g3-park6">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="c4-box" class="video-box" >
             <video id="c4" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c4.mp4") !!}"></video>
         </div>
     </div>
     <div id="g3-park7">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="c5-box" class="video-box" >
             <video id="c5" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c5.mp4") !!}"></video>
         </div>
     </div>
     <div id="g3-park8">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="c6-box" class="video-box" >
             <video id="c6" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/c6.mp4") !!}"></video>
         </div>
@@ -273,7 +279,7 @@
     $("#g3-park3 .question-last").on("click",function(){
         var p3answer = $("[name='g3-park3Answer']").val();
         if(p3answer.length == 0){
-            fbAlert("請先選擇答案");
+            fbAlert("{{ trans('messages.choose_option') }}");
             return false;
         }
         console.log(p3answer)
@@ -298,7 +304,7 @@
             g3Park8In()
             videoElem6.play()
         }else{
-            fbAlert("請先選擇答案");
+            fbAlert("{{ trans('messages.choose_option') }}");
         }
         // g2Park3Out()
         // g2Park4In()
@@ -401,6 +407,42 @@
     $("#g3-park9 .question-last").on("click",function(){
         // window.location.href="game4.html"
 
+    });
+    $("#g3-park2 .jump").on("click",function(){
+        videoElem.pause();
+        videoElem.currentTime = 0;
+        g3Park2Out();
+        g3Park3In();
+    })
+    $("#g3-park4 .jump").on("click",function(){
+        videoElem2.pause();
+        videoElem2.currentTime = 0;
+        g3Park4Out()
+        g3Park9In()
+    })
+    $("#g3-park5 .jump").on("click",function(){
+        videoElem3.pause();
+        videoElem3.currentTime = 0;
+        g3Park5Out()
+        g3Park9In()
+    })
+    $("#g3-park6 .jump").on("click",function(){
+        videoElem4.pause();
+        videoElem4.currentTime = 0;
+        g3Park6Out()
+        g3Park9In()
+    })
+    $("#g3-park7 .jump").on("click",function(){
+        videoElem5.pause();
+        videoElem5.currentTime = 0;
+        g3Park7Out()
+        g3Park9In()
+    })
+    $("#g3-park8 .jump").on("click",function(){
+        videoElem6.pause();
+        videoElem6.currentTime = 0;
+        g3Park8Out()
+        g3Park9In()
     })
 </script>
 

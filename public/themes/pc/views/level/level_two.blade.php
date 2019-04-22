@@ -25,6 +25,7 @@
         </div>
     </div>
     <div id="g2-park2">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box" >
             <video id="g2-park2-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park2.mp4") !!}"></video>
         </div>
@@ -85,6 +86,7 @@
         </div>
     </div>
     <div id="g2-park4">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box-park4" >
             <video id="g2-park4-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park4.mp4") !!}"></video>
         </div>
@@ -120,6 +122,7 @@
         </div>
     </div>
     <div id="g2-park7">
+        <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box-park7" >
             <video id="g2-park7-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park6.mp4") !!}"></video>
         </div>
@@ -284,7 +287,7 @@
     // 判断视频是否完全加载完毕
     //视频卡顿提醒
     function videoWaiting(){
-        fbAlert("網絡有點卡頓，正在緩衝中。結束後可點左下角重新播放視頻哦",3000)
+        fbAlert("{{ trans('messages.video_loading') }}",3000)
     }
     //视频卡顿提醒
     //第二部 s
@@ -340,7 +343,7 @@
             var p3answer = $("[name='g2-park3Answer']").val();
             var p3answer_option_id = $("[name='g2-park3Answer-option-id']").val();
             if(p3answer.length == 0){
-                fbAlert("請先選擇答案");
+                fbAlert("{{ trans('messages.choose_option') }}");
                 return false;
             }
             if(p3answer =="A" || p3answer =="B" || p3answer =="C"  ){
@@ -350,7 +353,7 @@
                 g2Park3Out()
                 g2Park3_2In()
             }else{
-                fbAlert("請先選擇答案");
+                fbAlert("{{ trans('messages.choose_option') }}");
             }
             submit_option(p3answer_option_id);
         })
@@ -421,7 +424,7 @@
     $("#g2-park8 .question-last").on("click",function(){
         var p8answer = $("[name='g2-park8Answer']").val();
         if(p8answer.length == 0){
-            fbAlert("請输入答案");
+            fbAlert("{{ trans('messages.enter_answer') }}");
             return false;
         }
         submit_content(2,p8answer);
@@ -444,6 +447,23 @@
     $("#g2-park9 .question-last").on("click",function(){
         window.location.href="{{ route('pc.level.level_three') }}"
 
+    });
+    $("#g2-park2 .jump").on("click",function(){
+        videoElem.pause();
+        videoElem.currentTime = 0;
+        g2Park2Out();
+        g2Park3In();
+    })
+    $("#g2-park4 .jump").on("click",function(){
+        videoElem2.pause();
+        videoElem2.currentTime = 0;
+        g2Park4Out();
+        g2Park5In();
+    })
+    $("#g2-park7 .jump").on("click",function(){
+        videoElem3.pause();
+        videoElem3.currentTime = 0;
+        g2Park7Out();
+        g2Park8In();
     })
 </script>
-
