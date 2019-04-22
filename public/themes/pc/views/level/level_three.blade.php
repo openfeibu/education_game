@@ -35,19 +35,19 @@
             <div class="question-bg" style="width: 68.1%;left: 16%;top: 10%">
                 <img src="{!! theme_asset_lang("images/g3-2.png") !!}" width="100%" alt="">
                 <div class="question-list">
-                    <div class="question-item fb-transition grightIn" tid = "A">
+                    <div class="question-item fb-transition grightIn" tid = "A" option_id="5" question_id="3">
                         <img src="{!! theme_asset_lang("images/g3-3.png") !!}" width="100%" alt="">
                     </div>
-                    <div class="question-item fb-transition grightIn"  tid = "B">
+                    <div class="question-item fb-transition grightIn"  tid = "B" option_id="6" question_id="3">
                         <img src="{!! theme_asset_lang("images/g3-4.png") !!}" width="100%" alt="">
                     </div>
-                    <div class="question-item fb-transition grightIn"  tid = "C">
+                    <div class="question-item fb-transition grightIn"  tid = "C" option_id="7" question_id="3">
                         <img src="{!! theme_asset_lang("images/g3-5.png") !!}" width="100%" alt="">
                     </div>
-                    <div class="question-item fb-transition grightIn"  tid = "D">
+                    <div class="question-item fb-transition grightIn"  tid = "D" option_id="8" question_id="3">
                         <img src="{!! theme_asset_lang("images/g3-6.png") !!}" width="100%" alt="">
                     </div>
-                    <div class="question-item fb-transition grightIn"  tid = "E">
+                    <div class="question-item fb-transition grightIn"  tid = "E" option_id="9" question_id="3">
                         <img src="{!! theme_asset_lang("images/g3-7.png") !!}" width="100%" alt="">
                     </div>
                 </div>
@@ -63,6 +63,7 @@
                 <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
             </div>
             <input type="hidden" name="g3-park3Answer" value="">
+            <input type="hidden" name="g3-park3Answer-option-id" value="">
         </div>
 
     </div>
@@ -266,7 +267,9 @@
 
     $("#g3-park3 .question-item").on("click",function(){
         var n = $(this).attr("tid");
+        var option_id = $(this).attr("option_id");
         $("[name='g3-park3Answer']").val(n);
+        $("[name='g3-park3Answer-option-id']").val(option_id);
         //提交答案
         $(this).addClass("active").siblings(".question-item").removeClass("active")
     })
@@ -278,6 +281,7 @@
     })
     $("#g3-park3 .question-last").on("click",function(){
         var p3answer = $("[name='g3-park3Answer']").val();
+        var p3answer_option_id = $("[name='g3-park3Answer-option-id']").val();
         if(p3answer.length == 0){
             fbAlert("{{ trans('messages.choose_option') }}");
             return false;
@@ -306,6 +310,7 @@
         }else{
             fbAlert("{{ trans('messages.choose_option') }}");
         }
+        submit_option(p3answer_option_id);
         // g2Park3Out()
         // g2Park4In()
         // videoElem2.play()
