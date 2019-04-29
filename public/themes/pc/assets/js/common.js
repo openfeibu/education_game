@@ -96,9 +96,7 @@ function fbAlert(text,time){
     time = 1000
   }
   $(".alertText").remove();
-  $("#main").append(`<div class="alertText">
-  <p>`+text+`</p>
-</div>`);
+$("#main").append('<div class="alertText"><p>'+text+'</p></div>');
   $(".alertText").fadeIn(200);
   setTimeout(function(){
     $(".alertText").fadeOut(200);

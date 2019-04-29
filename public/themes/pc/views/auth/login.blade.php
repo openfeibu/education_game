@@ -6,7 +6,7 @@
                 <label for=""><img src="{!! theme_asset_lang("images/zh.png") !!}" width="100%" alt=""></label>
                 <div class="login-input-c">
                     <img src="{!! theme_asset_lang("images/mmp.png") !!}" width="100%" alt="">
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" readonly autocomplete="off" id="name">
                 </div>
 
             </div>
@@ -14,7 +14,7 @@
                 <label for=""><img src="{!! theme_asset_lang("images/mm.png") !!}" width="100%" alt=""></label>
                 <div class="login-input-c">
                     <img src="{!! theme_asset_lang("images/mmp.png") !!}" width="100%" alt="">
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" readonly autocomplete="off" id="password">
                 </div>
             </div>
             <div class="login-btn fb-clearfix">
@@ -35,6 +35,10 @@
 </body>
 <script>
     $(function(){
+		$("#name,#password").on("click",function(){
+			$("#name,#password").removeAttr("readonly")
+		})
+		
         $(".forgetPass").on("click",function(){
             fbAlert("請聯係管理員")
         })

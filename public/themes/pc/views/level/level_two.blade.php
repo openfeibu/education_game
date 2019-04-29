@@ -27,7 +27,7 @@
     <div id="g2-park2">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box" >
-            <video id="g2-park2-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park2.mp4") !!}"></video>
+            <video id="g2-park2-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/B1_batch.mp4") !!}"></video>
         </div>
     </div>
     <div id="g2-park3">
@@ -88,7 +88,7 @@
     <div id="g2-park4">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box-park4" >
-            <video id="g2-park4-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park4.mp4") !!}"></video>
+            <video id="g2-park4-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/B2_batch.mp4") !!}"></video>
         </div>
     </div>
     <div id="g2-park5">
@@ -124,10 +124,47 @@
     <div id="g2-park7">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div id="video_box-park7" >
-            <video id="g2-park7-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/g2-park6.mp4") !!}"></video>
+            <video id="g2-park7-video" class="video" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/B3_batch.mp4") !!}"></video>
         </div>
     </div>
-    <div id="g2-park8">
+	 <div id="g2-park8">
+          <div class="tips">
+            <div class="tips-item">
+                <p class="gcenterIn delay-1" style="width: 48.6%"><img src="{!! theme_asset_lang("images/g2-13-1.png") !!}" width="100%" alt=""></p>
+              <br>
+              <p class="gcenterIn  g2-park8-ckda" style="width: 48.6%;display: none;"><img src="{!! theme_asset_lang("images/g2-13-2.png") !!}" width="100%" alt=""></p>
+              <br>
+            <div class="btn g2-park8-btn delay-1 gdownIn" style="width: 14.9%"><img src="{!! theme_asset_lang("images/ckda.png") !!}" alt=""></div>
+            
+            
+                <div class="question-power3  fb-clearfix  gdownIn" style="display: none;">
+                  <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
+                    <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+        <div id="g2-park8-1">
+          <div class="tips">
+            <div class="tips-item">
+              <p class="gcenterIn delay" style="width: 64.3%;position: relative;">
+                <img src="images/g2-14.png" alt="">
+				<img src="{!! theme_asset_lang("images/g2-14.png") !!}" alt=""/>
+                   <textarea  id="" cols="30" rows="10" name="g2-park8Answer" question_id="2"></textarea>
+              </p>
+              <br/>
+             
+              <div class="question-power3  fb-clearfix delay-1 gdownIn">
+                 <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
+                    <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
+                    <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+   <!-- <div id="g2-park8">
         <div class="tips">
             <div class="tips-item">
                 <p class="gcenterIn delay-1" style="width: 64.3%"><img src="{!! theme_asset_lang("images/g2-13.png") !!}" width="100%" alt=""></p>
@@ -147,7 +184,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div id="g2-park9">
         <div class="tips">
             <div class="tips-item">
@@ -252,6 +289,14 @@
     }
     function g2Park8Out(){
         $("#g2-park8").hide();
+
+    }
+	function g2Park8_1In(){
+        $("#g2-park8-1").fadeIn();
+
+    }
+    function g2Park8_1Out(){
+        $("#g2-park8-1").hide();
 
     }
     function g2Park9In(){
@@ -421,20 +466,41 @@
     }
     //第六步 e
     //第七步 s
+	
+    $("#g2-park8 .g2-park8-btn").on("click",function(){
+      $("#g2-park8 .g2-park8-ckda,#g2-park8 .question-power3").show();
+      $(this).hide();
+    })
+    $("#g2-park8 .question-reset").on("click",function(){
+      g2Park7In();
+      g2Park8Out();
+      videoElem3.play()
+      $("#g2-park8 .g2-park8-ckda,#g2-park8 .question-power3").hide();
+      $("#g2-park8 .g2-park8-btn").show();
+    })
     $("#g2-park8 .question-last").on("click",function(){
+      g2Park8_1In();
+      g2Park8Out();
+      $("#g2-park8 .g2-park8-ckda,#g2-park8 .question-power3").hide();
+      $("#g2-park8 .g2-park8-btn").show();
+    })
+
+  
+	
+    $("#g2-park8-1 .question-last").on("click",function(){
         var p8answer = $("[name='g2-park8Answer']").val();
         if(p8answer.length == 0){
             fbAlert("{{ trans('messages.enter_answer') }}");
             return false;
         }
         submit_content(2,p8answer);
-        g2Park8Out();
+        g2Park8_1Out();
         g2Park9In();
 
     })
-    $("#g2-park8 .question-reset").on("click",function(){
+    $("#g2-park8-1 .question-reset").on("click",function(){
         g2Park7In();
-        g2Park8Out();
+        g2Park8_1Out();
         videoElem3.play()
     })
     //第七步 e
