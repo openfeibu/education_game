@@ -41,4 +41,5 @@ return [
     'video_loading' => 'Loading. Unity can be when the bottom left corner of the replay ',
     'choose_option' => 'Please choose your answer',
     'enter_answer' => 'Please enter your answer',
+    'video_not_exist' => "Video doesn't exist",
 ];

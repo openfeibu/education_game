@@ -64,6 +64,7 @@
             </div>
             <input type="hidden" name="g3-park3Answer" value="">
             <input type="hidden" name="g3-park3Answer-option-id" value="">
+            <input type="hidden" name="g3-park3Answer-question-id" value="">
         </div>
 
     </div>
@@ -268,8 +269,10 @@
     $("#g3-park3 .question-item").on("click",function(){
         var n = $(this).attr("tid");
         var option_id = $(this).attr("option_id");
+        var question_id = $(this).attr("question_id");
         $("[name='g3-park3Answer']").val(n);
         $("[name='g3-park3Answer-option-id']").val(option_id);
+        $("[name='g3-park3Answer-question-id']").val(question_id);
         //提交答案
         $(this).addClass("active").siblings(".question-item").removeClass("active")
     })
@@ -282,6 +285,7 @@
     $("#g3-park3 .question-last").on("click",function(){
         var p3answer = $("[name='g3-park3Answer']").val();
         var p3answer_option_id = $("[name='g3-park3Answer-option-id']").val();
+        var p3answer_question_id = $("[name='g3-park3Answer-question-id']").val();
         if(p3answer.length == 0){
             fbAlert("{{ trans('messages.choose_option') }}");
             return false;
@@ -310,7 +314,7 @@
         }else{
             fbAlert("{{ trans('messages.choose_option') }}");
         }
-        submit_option(p3answer_option_id);
+        submit_option(p3answer_question_id,p3answer_option_id,'');
         // g2Park3Out()
         // g2Park4In()
         // videoElem2.play()

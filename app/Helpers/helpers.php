@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Request;
 use App\Facades\Hashids;
 use App\Facades\Trans;
-use Illuminate\Auth,Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth,Illuminate\Support\Facades\App;
 
 if (!function_exists('hashids_encode')) {
     /**

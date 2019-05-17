@@ -29,6 +29,8 @@ Route::group([
     Route::resource('permission', 'PermissionResourceController');
     Route::resource('role', 'RoleResourceController');
 
+    Route::resource('user_answer', 'UserAnswerResourceController');
+
     Route::group(['prefix' => 'case','as' => 'case.'], function ($router) {
         Route::resource('case', 'CaseResourceController');
         Route::post('/case/destroyAll', 'CaseResourceController@destroyAll')->name('case.destroy_all');
@@ -67,6 +69,7 @@ Route::group([
     'namespace' => 'Pc',
     'as' => 'pc.',
 ], function () {
+    Auth::routes();
     Route::get('/','HomeController@home')->name('home');
     Route::get('/levels','HomeController@levels')->name('levels');
     Route::get('/level/1','LevelController@levelOne')->name('level.level_one');
@@ -76,7 +79,11 @@ Route::group([
     Route::get('/level/5','LevelController@levelFive')->name('level.level_five');
     Route::post('/submit_option','AnswerController@submitOption')->name('submit_option');
     Route::post('/submit_content','AnswerController@submitContent')->name('submit_content');
-    Auth::routes();
+
+    Route::post('/level_one/submit_tolerate_grade','LevelOneController@submitTolerateGrade')->name('level_one.submit_tolerate_grade');
+    Route::post('/level_one/submit_video_category','LevelOneController@submitVideoCategory')->name('level_one.submit_video_category');
+    Route::post('/level_one/submit_notice_grade','LevelOneController@submitNoticeGrade')->name('level_one.submit_notice_grade');
+
     Route::get('/user/login','Auth\LoginController@showLoginForm')->name('login');
     Route::post('ajax_login', 'Auth\LoginController@ajaxLogin')->name('ajax_login');
     Route::get('logout', 'Auth\LoginController@logout');
