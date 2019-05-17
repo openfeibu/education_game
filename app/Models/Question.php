@@ -18,7 +18,7 @@ class Question extends BaseModel
      *
      * @var array
      */
-    protected $config = 'model.game.option';
+    protected $config = 'model.game.question';
 
     public $timestamps = false;
 

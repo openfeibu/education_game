@@ -32,4 +32,16 @@ return [
         'success' => '成功',
         'error'   => '错误',
     ],
+    'submit_success' => '提交成功',
+    'change_lang_success' => '设置成功',
+
+    'login' => [
+        'no_complete' => '請完善信息後提交'
+    ],
+    'internal_server_error' => '服务器出错',
+    'video_loading' => '網絡有點卡頓，正在緩衝中。結束後可點左下角重新播放視頻哦',
+    'choose_option' => '請先選擇答案',
+    'enter_answer' => '請输入答案',
+    'video_not_exist' => '視頻不存在',
+
 ];
