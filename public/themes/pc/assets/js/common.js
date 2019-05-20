@@ -44,21 +44,20 @@ $(function(){
   $(window).resize(function(){
     resizeFun()
   })
-    /*
-  var fileList = [
-    "images/weBg.jpg",
-    "images/startBtn.png",
+  // var fileList = [
+  //   "images/weBg.jpg",
+  //   "images/startBtn.png",
     
-  ];
-  // 加载帧图资源
-    loader = new PxLoader();
-    for (var i = 0; i < fileList.length; i++) {
-        imgObj[i] = loader.addImage(fileList[i]);
-    }
+  // ];
+  // // 加载帧图资源
+  //   loader = new PxLoader();
+  //   for (var i = 0; i < fileList.length; i++) {
+  //       imgObj[i] = loader.addImage(fileList[i]);
+  //   }
 
-    loader.start();
-    // 加载完成
-*/
+  //   loader.start();
+  //   // 加载完成
+
 
 })
 
@@ -96,7 +95,7 @@ function fbAlert(text,time){
     time = 1000
   }
   $(".alertText").remove();
-$("#main").append('<div class="alertText"><p>'+text+'</p></div>');
+  $("#main").append('<div class="alertText"><p>'+text+'</p></div>');
   $(".alertText").fadeIn(200);
   setTimeout(function(){
     $(".alertText").fadeOut(200);
@@ -134,4 +133,5 @@ function playSound()
     }
 document.oncontextmenu = function(){
   return false;
-}
+} 
+
