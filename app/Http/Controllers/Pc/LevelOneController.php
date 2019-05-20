@@ -103,10 +103,10 @@ class LevelOneController extends BaseController
         {
             $request_data = json_decode($request_data,true);
         }
-        $request_data = [
-            'a1' => 1,
-            'a2' => 3
-        ];
+//        $request_data = [
+//            'a1' => 1,
+//            'a2' => 3
+//        ];
         $video_category_data = [];
         $i = 0;
 
