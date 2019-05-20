@@ -20,8 +20,6 @@ class LevelOneController extends BaseController
     {
         parent::__construct();
         $this->middleware("auth:user.web");
-        $this->user = Auth::user();
-        //$this->user = User::where('id',10)->first();
     }
 
     public function submitTolerateGrade(Request $request)
@@ -38,13 +36,13 @@ class LevelOneController extends BaseController
                 ->url(url('/'))
                 ->redirect();
         }
-        $user_id = $this->user->id;
+        $user_id = Auth::user()->id;
 
         $user_grade = UserLevelOneVideoTolerateGrade::where('user_id',$user_id)->where('video_id',$video->id)->first();
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
         if(!$last_level_question_user_answer)
         {
@@ -112,7 +110,7 @@ class LevelOneController extends BaseController
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
 
         foreach ($request_data as $key => $val)
@@ -120,7 +118,7 @@ class LevelOneController extends BaseController
             $i++;
             // $video_category_data[$val][] = $key;
             $video_category_data[$i] = [
-                'user_id' => $this->user->id,
+                'user_id' => Auth::user()->id,
                 'video_id' => $key,
                 'category_id' => $val
             ];
@@ -129,12 +127,12 @@ class LevelOneController extends BaseController
             if(!$last_level_question_user_answer)
             {
                 UserLevelOneVideoCategory::create([
-                    'user_id' => $this->user->id,
+                    'user_id' => Auth::user()->id,
                     'video_id' => $video->id,
                     'category_id' => $val
                 ]);
             }else{
-                $last_user_category = UserLevelOneVideoCategory::where('user_id',$this->user->id)->where('video_id',$video->id)->where('created_at','>',$last_level_question_user_answer->created_at)->first();
+                $last_user_category = UserLevelOneVideoCategory::where('user_id',Auth::user()->id)->where('video_id',$video->id)->where('created_at','>',$last_level_question_user_answer->created_at)->first();
 
                 if($last_user_category)
                 {
@@ -143,14 +141,14 @@ class LevelOneController extends BaseController
                     ]);
                 }else{
                     UserLevelOneVideoCategory::create([
-                        'user_id' => $this->user->id,
+                        'user_id' => Auth::user()->id,
                         'video_id' => $video->id,
                         'category_id' => $val
                     ]);
                 }
             }
             /*
-            $user_video_category = UserLevelOneVideoCategory::where('video_id',$video->id)->where('user_id',$this->user->id)->first();
+            $user_video_category = UserLevelOneVideoCategory::where('video_id',$video->id)->where('user_id',Auth::user()->id)->first();
             if($user_video_category)
             {
                 UserLevelOneVideoCategory::where('id',$user_video_category->id)->update([
@@ -158,7 +156,7 @@ class LevelOneController extends BaseController
                 ]);
             }else{
                 UserLevelOneVideoCategory::create([
-                    'user_id' => $this->user->id,
+                    'user_id' => Auth::user()->id,
                     'video_id' => $video->id,
                     'category_id' => $val
                 ]);
@@ -178,13 +176,13 @@ class LevelOneController extends BaseController
         $category_id = $request->category_id;
         $grade =  $request->grade;
 
-        $user_id = $this->user->id;
+        $user_id = Auth::user()->id;
 
         $user_grade = UserLevelOneVideoCategoryNoticeGrade::where('user_id',$user_id)->where('category_id',$category_id)->first();
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
         if(!$last_level_question_user_answer)
         {

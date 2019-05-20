@@ -17,8 +17,6 @@ class AnswerController extends BaseController
     {
         parent::__construct();
         $this->middleware("auth:user.web");
-        $this->user = Auth::user();
-        //$this->user = User::where('id',10)->first();
     }
 
     public function submitOption(Request $request)
@@ -32,21 +30,21 @@ class AnswerController extends BaseController
         //关卡最后一个问题：用于判断是否完成了一个关卡
         $last_level_question = Question::where('level_id',$question->level_id)->orderBy('id','desc')->first();
 
-        $last_level_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',$question->level_id)->orderBy('id','desc')->first();
+        $last_level_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',$question->level_id)->orderBy('id','desc')->first();
 
         if(isset($last_level_user_answer) && $last_level_user_answer && $last_level_user_answer->question_id == $last_level_question->id)
         {
             UserAnswer::create([
-                'user_id' => $this->user->id,
+                'user_id' => Auth::user()->id,
                 'level_id' => $question->level_id,
                 'question_id' => $question_id,
                 'option_id' => $option_id,
                 'content' => $content
             ]);
         }else{
-            $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',$question->level_id)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+            $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',$question->level_id)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
-            $user_answer = UserAnswer::where('user_id',$this->user->id)->where('question_id',$question_id)->where('id','>','');
+            $user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('question_id',$question_id)->where('id','>','');
             if($last_level_question_user_answer)
             {
                 $user_answer = $user_answer->where('id','>',$last_level_question_user_answer->id);
@@ -60,7 +58,7 @@ class AnswerController extends BaseController
                 ]);
             }else{
                 UserAnswer::create([
-                    'user_id' => $this->user->id,
+                    'user_id' => Auth::user()->id,
                     'level_id' => $question->level_id,
                     'question_id' => $question_id,
                     'option_id' => $option_id,
@@ -79,7 +77,7 @@ class AnswerController extends BaseController
     public function submitContent(Request $request)
     {
         $question_id = $request->input('question_id');
-        $user_id = $this->user->id;
+        $user_id = Auth::user()->id;
         UserAnswer::create([
             'user_id' => $user_id,
             'question_id' => $question_id,
