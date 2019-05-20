@@ -33,8 +33,6 @@ class AnswerController extends BaseController
 
         $last_level_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',$question->level_id)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',$question->level_id)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
-
         if(isset($last_level_user_answer) && $last_level_user_answer && $last_level_user_answer->question_id == $last_level_question->id)
         {
             UserAnswer::create([
@@ -45,6 +43,7 @@ class AnswerController extends BaseController
                 'content' => $content
             ]);
         }else{
+            $last_level_question_user_answer = UserAnswer::where('user_id',$this->user->id)->where('level_id',$question->level_id)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
             $user_answer = UserAnswer::where('user_id',$this->user->id)->where('question_id',$question_id)->where('id','>','');
             if($last_level_question_user_answer)
