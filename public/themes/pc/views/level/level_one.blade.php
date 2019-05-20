@@ -431,7 +431,7 @@
                     },//移动结束时候的回调函数
 
                 });
-                g1p5Resize();
+               
                 $(window).resize(function(){
                     g1p5Resize()
                 })
@@ -439,6 +439,7 @@
                     //初始化排序 263 148
                     var iw =$(".g1-video-item2 img").width()
                     var ih =$(".g1-video-item2 img").height()
+					
                     $("#g1-park5 .g1-video-box").css("height",(parseInt(ih)+10)*4+10)
                     $(".g1-video-item2").each(function(k,v){
                         if(k < 6){
@@ -667,7 +668,7 @@
                     },//移动结束时候的回调函数
 
                 });
-                g1p7Resize();
+               
                 $(window).resize(function(){
                     g1p7Resize()
                 })
@@ -794,8 +795,8 @@
                         </div>
                     </div>
                     <div class="g1-comment-p9 fb-clearfix gcenterIn delay-2"  style="width: 30%" >
-                        <img src="{!! theme_asset_lang("images/g1-22.png") !!}" alt="" f="0" nid="5">
-                        <div class="g1-comment-xx">
+                        <img src="{!! theme_asset_lang("images/g1-22.png") !!}" >
+                        <div class="g1-comment-xx" alt="" f="0" nid="5">
                             <div class="xx "></div>
                             <div class="xx "></div>
                             <div class="xx "></div>
@@ -804,8 +805,8 @@
                         </div>
                     </div>
                     <div class="g1-comment-p9 fb-clearfix gcenterIn delay-3" style="width: 30%" >
-                        <img src="{!! theme_asset_lang("images/g1-23.png") !!}" alt="" f="0" nid="6">
-                        <div class="g1-comment-xx">
+                        <img src="{!! theme_asset_lang("images/g1-23.png") !!}" alt="" >
+                        <div class="g1-comment-xx" f="0" nid="6">
                             <div class="xx "></div>
                             <div class="xx "></div>
                             <div class="xx "></div>
@@ -814,8 +815,8 @@
                         </div>
                     </div>
                     <div class="g1-comment-p9 g1-comment-p9-5 fb-clearfix gcenterIn delay-3" style="width: 63%" >
-                        <img src="{!! theme_asset_lang("images/g1-24.png") !!}" alt="" f="0" nid="7">
-                        <div class="g1-comment-xx">
+                        <img src="{!! theme_asset_lang("images/g1-24.png") !!}" alt="">
+                        <div class="g1-comment-xx" f="0" nid="7">
                             <div class="xx "></div>
                             <div class="xx "></div>
                             <div class="xx "></div>
@@ -875,6 +876,7 @@
         $("#loading").hide()
     }
     function g1Park1In(){
+		$(window).resize();
         $("#g1-park5,#g1-park7").hide().css("opacity",1);
         $("#g1-park1").fadeIn()
     }
