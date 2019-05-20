@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta content="telephone=no" name="format-detection" />
+    <meta content="teleph=no" name="format-detection" />
     <!-- uc强制竖屏 -->
     <meta name="screen-orientation" content="portrait">
     <!-- UC应用模式 -->

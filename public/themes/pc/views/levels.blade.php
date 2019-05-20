@@ -1,9 +1,11 @@
 
 <body  class="g2Bg">
+
+
 <section id="main" class="mainBg2">
     <div class="point">
         <div class="point-item abtn">
-            <a href="#">
+            <a href="{{ route('pc.level.level_one') }}">
                 <img src="{!! theme_asset_lang("images/g1.png") !!}" alt="">
             </a>
         </div>
@@ -18,13 +20,8 @@
             </a>
         </div>
         <div class="point-item abtn">
-            <a href="#">
+            <a href="{{ route('pc.level.level_four') }}">
                 <img src="{!! theme_asset_lang("images/g4.png") !!}" alt="">
-            </a>
-        </div>
-        <div class="point-item abtn">
-            <a href="#">
-                <img src="{!! theme_asset_lang("images/g5.png") !!}" alt="">
             </a>
         </div>
     </div>
@@ -34,5 +31,6 @@
     </div>
 
 </section>
+
 <!-- <audio id="audioPlay" src="button.mp3" preload ></audio> -->
 </body>
