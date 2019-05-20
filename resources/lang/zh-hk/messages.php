@@ -43,5 +43,8 @@ return [
     'choose_option' => '請先選擇答案',
     'enter_answer' => '請输入答案',
     'video_not_exist' => '視頻不存在',
-
+    'classify_24_videos' => '請先對24個視頻進行分類',
+    'rate_24_videos' => '請先對24個視頻進行評分',
+    'rate_5_behaviors' => '請先對上面5種行爲進行打分',
+    'enter_e_answer' => '請先输入E答案',
 ];
