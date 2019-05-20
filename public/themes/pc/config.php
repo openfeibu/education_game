@@ -63,7 +63,7 @@ return [
             $theme->asset()->usePath()->add('jquery_js', 'js/jquery.min.js');
             $theme->asset()->usePath()->add('common_js', 'js/common.js');
             $theme->asset()->usePath()->add('pxloader_js', 'js/pxloader-images.min.js');
-
+            $theme->asset()->usePath()->add('tdrag_js', 'js/Tdrag.min.js');
         },
 
         // Listen on event before render a layout,
