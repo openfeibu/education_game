@@ -414,7 +414,7 @@
 
     })
     $("#g3-park9 .question-last").on("click",function(){
-        // window.location.href="game4.html"
+         window.location.href="{{ route('pc.level.level_four') }}"
 
     });
     $("#g3-park2 .jump").on("click",function(){
