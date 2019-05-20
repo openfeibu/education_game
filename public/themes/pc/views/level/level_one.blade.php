@@ -395,6 +395,7 @@
                     scope:".moveBox ",
                     cbStart:function(obj){
                         var i = $(obj).index(".g1-video-item2");
+						console.log(obj)
                         vid = 'a'+(i+1);
                         console.log(itemOption);
                         st = itemOption[i].top;
@@ -621,6 +622,7 @@
                 $(".g1-video-item3").Tdrag({
                     scope:".moveBox2 ",
                     cbStart:function(obj){
+
                         var i = $(obj).index(".g1-video-item3");
                         vid = "a"+(i+1)
                         st = itemOption[i].top;
@@ -1017,6 +1019,7 @@
     function go(){
         var count = $(".video").length;
         ++n;
+		console.log(n)
         if( n == count){
             //  开始
             clearInterval(timer);
@@ -1049,7 +1052,7 @@
 
     })
     $("#g1-park2 .question-last").on("click",function(){
-        if(Object.keys(videoScore).length !=0){
+        if(Object.keys(videoScore).length !=24){
             fbAlert("{{ trans('messages.rate_24_videos') }}",3000)
         }else{
             g1Park2Out();
@@ -1069,6 +1072,7 @@
     //第三步 s
     var g1Video ={};
     $(".g1-park2-v").each(function(k,v){
+		console.log(v)
         g1Video[k] = $(v).find("video")[0];
         g1Video[k].addEventListener('canplaythrough',function(){
             go();
@@ -1132,7 +1136,7 @@
     })
     $("#g1-park5 .question-last").on("click",function(){
         console.log(videoClassfiy)
-        if(Object.keys(videoClassfiy).length !=0){
+        if(Object.keys(videoClassfiy).length !=24){
             fbAlert("{{ trans('messages.classify_24_videos') }}",3000)
         }else{
             $.post("{{ route('pc.level_one.submit_video_category') }}",{'_token':"{!! csrf_token() !!}",data:videoClassfiy},function(data){
@@ -1156,7 +1160,7 @@
     })
     $("#g1-park7 .question-last").on("click",function(){
         console.log(videoClassfiy2)
-        if(Object.keys(videoClassfiy2).length !=2){
+        if(Object.keys(videoClassfiy2).length !=24){
             fbAlert("{{ trans('messages.classify_24_videos') }}",3000)
         }else{
             $.post("{{ route('pc.level_one.submit_video_category') }}",{'_token':"{!! csrf_token() !!}",data:videoClassfiy2},function(data){
