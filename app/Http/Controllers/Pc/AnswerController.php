@@ -15,9 +15,10 @@ class AnswerController extends BaseController
 {
     public function __construct()
     {
-        //        $this->middleware("auth:user.web");
-//        $this->user = Auth::user();
-        $this->user = User::where('id',10)->first();
+        parent::__construct();
+        $this->middleware("auth:user.web");
+        $this->user = Auth::user();
+        //$this->user = User::where('id',10)->first();
     }
 
     public function submitOption(Request $request)

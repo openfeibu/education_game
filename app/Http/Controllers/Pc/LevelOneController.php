@@ -19,9 +19,9 @@ class LevelOneController extends BaseController
     public function __construct()
     {
         parent::__construct();
-//        $this->middleware("auth:user.web");
-//        $this->user = Auth::user();
-        $this->user = User::where('id',10)->first();
+        $this->middleware("auth:user.web");
+        $this->user = Auth::user();
+        //$this->user = User::where('id',10)->first();
     }
 
     public function submitTolerateGrade(Request $request)
