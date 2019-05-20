@@ -77,11 +77,29 @@ return [
         'visible'      => [],
         'guarded'      => ['*'],
         //'slugs'        => ['slug' => 'name'],
-        'fillable'     => ['user_id','level_id','question_id', 'option_id', 'content', 'created_at','updated_at'],
-        'translate'    => ['user_id', 'level_id','question_id', 'option_id', 'content', 'created_at','updated_at'],
+        'fillable'     => ['user_id','history_id','level_id','question_id', 'option_id', 'content', 'created_at','updated_at'],
+        'translate'    => ['user_id','history_id', 'level_id','question_id', 'option_id', 'content', 'created_at','updated_at'],
         'upload_folder' => '/page/page',
         'encrypt'      => ['id'],
        // 'revision'     => ['name', 'title'],
+        'perPage'      => '20',
+        'search'        => [
+
+        ],
+    ],
+    'game_history' => [
+        'model'        => 'App\Models\GameHistory',
+        'table'        => 'game_histories',
+        'primaryKey'   => 'id',
+        'hidden'       => [],
+        'visible'      => [],
+        'guarded'      => ['*'],
+        //'slugs'        => ['slug' => 'name'],
+        'fillable'     => ['user_id','level_id', 'created_at','updated_at'],
+        'translate'    => ['user_id', 'level_id', 'created_at','updated_at'],
+        'upload_folder' => '/page/page',
+        'encrypt'      => ['id'],
+        // 'revision'     => ['name', 'title'],
         'perPage'      => '20',
         'search'        => [
 
