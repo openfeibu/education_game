@@ -27,7 +27,7 @@
 
         </div>
         <div class="start btn" style="width: 17.7%">
-            <a href="{{ route('pc.levels',['lang' => App::getLocale()]) }}" ><img src="{!! theme_asset_lang("images/start.png") !!}" width="100%" alt=""></a>
+            <a href="{{ route('pc.level.level_one',['lang' => App::getLocale()]) }}" ><img src="{!! theme_asset_lang("images/start.png") !!}" width="100%" alt=""></a>
         </div>
         <div class="guanka btn" style="width: 17.7%">
             <a href="{{ route('pc.levels',['lang' => App::getLocale()]) }}"><img src="{!! theme_asset_lang("images/choose.png") !!}" width="100%" alt=""></a>
@@ -52,9 +52,9 @@
             $(".loginBtn").find("img").attr("src","{!! theme_asset("images/login-a.png") !!}")
             @endif
             $(".start ").find("img").attr("src","{!! theme_asset("images/start.png") !!}")
-            $(".start ").find("a").attr("href","{{ route('pc.levels',['lang' => 'zh-hk']) }}")
+            $(".start ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'zh-hk']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/choose.png") !!}")
-            $(".guanka ").find("a").attr("href","{{ route('pc.levels',['lang' => 'zh-hk']) }}")
+            $(".guanka ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'zh-hk']) }}")
         })
         $(".lau-en").on("click",function(){
             if($(this).hasClass("active2")){
@@ -67,9 +67,9 @@
             $(".loginBtn").find("img").attr("src","{!! theme_asset("images/en/login-a.png") !!}")
             @endif
             $(".start ").find("img").attr("src","{!! theme_asset("images/en/start.png") !!}")
-            $(".start ").find("a").attr("href","{{ route('pc.levels',['lang' => 'en']) }}")
+            $(".start ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'en']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/en/choose.png") !!}")
-            $(".guanka ").find("a").attr("href","{{ route('pc.levels',['lang' => 'en']) }}")
+            $(".guanka ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'en']) }}")
 
 
         })

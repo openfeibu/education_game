@@ -413,7 +413,7 @@
         g3Park10Out();
 
     })
-    $("#g3-park9 .question-last").on("click",function(){
+    $("#g3-park10 .question-last").on("click",function(){
          window.location.href="{{ route('pc.level.level_four') }}"
 
     });

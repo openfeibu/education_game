@@ -151,7 +151,7 @@
           <div class="tips">
             <div class="tips-item">
               <p class="gcenterIn delay" style="width: 64.3%;position: relative;">
-                <img src="images/g2-14.png" alt="">
+               
 				<img src="{!! theme_asset_lang("images/g2-14.png") !!}" alt=""/>
                    <textarea  id="" cols="30" rows="10" name="g2-park8Answer" question_id="2"></textarea>
               </p>

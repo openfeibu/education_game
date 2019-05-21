@@ -231,8 +231,8 @@
             </div>
         </div>
         <div class="question-power3  fb-clearfix delay-2 gdownIn">
-            <!-- <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div> -->
-            <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/return.png") !!}" alt=""></div>
+             <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div> 
+            <div class="question-reset bbtn" style="display:none;"><img src="{!! theme_asset_lang("images/return.png") !!}" alt=""></div>
             <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
         </div>
     </div>
@@ -243,7 +243,7 @@
                 <br>
                 <div class="question-power3  fb-clearfix  delay-1 gdownIn" style="margin-top: 0">
                     <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
-                    <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
+                    <div class="question-reset bbtn" ><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div>
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
             </div>
@@ -545,16 +545,24 @@
             $(".reflect-1").animate({left:"-100%"})
             $(".reflect-2").animate({left:0})
             $(".reflect-3").animate({left:'100%'})
+			$("#g4-park6 .question-power3 .question-reset").show();
         }else if(step == 2){
             $(".reflect-1").animate({left:"-200%"})
             $(".reflect-2").animate({left:'-100%'})
             $(".reflect-3").animate({left:0})
+			$("#g4-park6 .question-power3 .question-reset").show();
         }else if(step == 3){
             g4Park6Out();
             g4Park7In();
+			step = 0;
+			$(".reflect-1").animate({left:0})
+            $(".reflect-2").animate({left:'100%'})
+            $(".reflect-3").animate({left:'200%'})
+			$("#g4-park6 .question-power3 .question-reset").hide();
         }else{
             return false;
         }
+		
         step++;
     })
     $("#g4-park6 .question-power3 .question-reset").on("click",function(){
@@ -562,10 +570,12 @@
             $(".reflect-1").animate({left:"-100%"})
             $(".reflect-2").animate({left:0})
             $(".reflect-3").animate({left:'100%'})
+			$("#g4-park6 .question-power3 .question-reset").show();
         }else if(step == 2){
             $(".reflect-1").animate({left:0})
             $(".reflect-2").animate({left:'100%'})
             $(".reflect-3").animate({left:'200%'})
+			$("#g4-park6 .question-power3 .question-reset").hide();
         }else{
             return false;
         }

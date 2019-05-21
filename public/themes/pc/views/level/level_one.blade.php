@@ -113,146 +113,146 @@
     <div class="g1-park2-v" id="g1-park2-1">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a1" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A1_batch.mp4") !!}"></video>
+            <video id="a1" oncanplaythrough="go()" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A1_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-2">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a2" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A2_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a2" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A2_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-3">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a3" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A3_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a3" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A3_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-4">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a4" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A4_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a4" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A4_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-5">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a5" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A5_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a5" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A5_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-6">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a6" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A6_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a6" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A6_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-7">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a7" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A7_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a7" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A7_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-8">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a8" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A8_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a8" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A8_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-9">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a9" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A9_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a9" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A9_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-10">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a10" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A10_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a10" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A10_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-11">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a11" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A11_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a11" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A11_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-12">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a12" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A12_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a12" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A12_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-13">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a13" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A13_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a13" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A13_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-14">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a14" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A14_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a14" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A14_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-15">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a15" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A15_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a15" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A15_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-16">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a16" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A16_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a16" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A16_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-17">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a17" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A17_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a17" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A17_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-18">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a18" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A18_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a18" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A18_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-19">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a19" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A19_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a19" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A19_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-20">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a20" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A20_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a20" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A20_batch.mp4") !!}"></video>
         </div>
     </div>
 
     <div class="g1-park2-v" id="g1-park2-21">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a21" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A21_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a21" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A21_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-22">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a22" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A22_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a22" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A22_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-23">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a23" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A23_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a23" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A23_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-24">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a24" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A24_batch.mp4") !!}"></video>
+            <video oncanplaythrough="go()" id="a24" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A24_batch.mp4") !!}"></video>
         </div>
     </div>
     <div id="g1-park3">
@@ -389,15 +389,15 @@
         </div>
         <script>
             $(function(){
-                var st,sl,elem,vid;
+                var st,sl,elem,vid,itemNum;
                 var itemOption=[];
                 $(".g1-video-item2").Tdrag({
                     scope:".moveBox ",
                     cbStart:function(obj){
                         var i = $(obj).index(".g1-video-item2");
-						console.log(obj)
+						itemNum = i;
                         vid = 'a'+(i+1);
-                        console.log(itemOption);
+                        
                         st = itemOption[i].top;
                         sl = itemOption[i].left;
                         elem = obj;
@@ -408,7 +408,7 @@
                         if(isIn(obj)){
                             $(obj).addClass("active")
                         }
-                        // console.log($(obj).offset())
+                
 
                     },//移动中的回调函数
                     cbEnd:function(){
@@ -417,6 +417,7 @@
 
                         if(isIn(elem) == 1){
                             $(elem).removeClass("c2").addClass("c1");
+							$(".g1-video-item3").eq(itemNum).css("z-index","1").addClass("g1-video-item3-1")
                             videoClassfiy[vid] = 1;
                         }else if(isIn(elem) == 2){
                             $(elem).removeClass("c1").addClass("c2")
@@ -629,7 +630,7 @@
                         st = itemOption[i].top;
                         sl = itemOption[i].left;
                         elem = obj;
-                        console.log($(obj).offset())
+                      
                     },//移动前的回调函数
                     cbMove:function(obj,that){
                         $(obj).off("click",watchVideo);
@@ -637,13 +638,13 @@
                         if(isIn2(obj)){
                             $(obj).addClass("active")
                         }
-                        // console.log($(obj).offset())
+                     
 
                     },//移动中的回调函数
                     cbEnd:function(){
                         $(elem).removeClass("active")
                         // $(elem).on("click",watchVideo);
-                        console.log(isIn2(elem) )
+                     
                         if(isIn2(elem) == 1){
                             $(elem).removeClass("c2,c3,c4,c5").addClass("c1")
                             videoClassfiy2[vid] = 3;
@@ -748,7 +749,8 @@
                 $(".g1-video-item3").on("click",watchVideo)
                 function watchVideo(){
                     var i = $(this).index(".g1-video-item3");
-                    g1Park2_1In(i)
+					videoIndex = i+1;
+                    g1Park2_1In(videoIndex)
                     videoFlag = true;
                 }
             })
@@ -876,7 +878,8 @@
         $("#loading").hide()
     }
     function g1Park1In(){
-		$(window).resize();
+		
+		
         $("#g1-park5,#g1-park7").hide().css("opacity",1);
         $("#g1-park1").fadeIn()
     }
@@ -939,6 +942,7 @@
     }
     function g1Park5In(){
         $("#g1-park5").fadeIn();
+		$(window).resize();	
 
     }
     function g1Park5Out(){
@@ -955,6 +959,7 @@
     }
     function g1Park7In(){
         $("#g1-park7").fadeIn();
+		$(window).resize();	
 
     }
     function g1Park7Out(){
@@ -1015,13 +1020,13 @@
             var n = parseInt($("#loading p span").text());
             n = ++n > 99 ? 99 : n;
             $("#loading p span").text(n)
-        },500)
+        },400)
     }
     // 判断视频是否完全加载完毕
     function go(){
         var count = $(".video").length;
         ++n;
-		console.log(n)
+	
         if( n == count){
             //  开始
             clearInterval(timer);
@@ -1037,7 +1042,6 @@
         fbAlert("{{ trans('messages.video_loading') }}",3000)
     }
     //视频卡顿提醒
-
     //第一步
     $("#g1-park1 .g1-park1-btn").on("click",function(){
         g1Park1Out()
@@ -1066,6 +1070,7 @@
         videoE.pause();
         videoE.currentTime = 0;
         g1Park2_1Out();
+
         if(!videoFlag){
             g1Park3In();
         }
@@ -1074,13 +1079,13 @@
     //第三步 s
     var g1Video ={};
     $(".g1-park2-v").each(function(k,v){
-		console.log(v)
         g1Video[k] = $(v).find("video")[0];
-        g1Video[k].addEventListener('canplaythrough',function(){
-            go();
-        });
+        // g1Video[k].addEventListener('canplaythrough',function(){
+            // go();
+        // });
         g1Video[k].addEventListener('ended',function () {
             g1Park2_1Out();
+			
             if(!videoFlag){
                 g1Park3In();
             }
@@ -1137,7 +1142,7 @@
 
     })
     $("#g1-park5 .question-last").on("click",function(){
-        console.log(videoClassfiy)
+   
         if(Object.keys(videoClassfiy).length !=24){
             fbAlert("{{ trans('messages.classify_24_videos') }}",3000)
         }else{
@@ -1161,8 +1166,8 @@
 
     })
     $("#g1-park7 .question-last").on("click",function(){
-        console.log(videoClassfiy2)
-        if(Object.keys(videoClassfiy2).length !=24){
+        
+        if(Object.keys(videoClassfiy2).length != $(".g1-video-item3-1").length){
             fbAlert("{{ trans('messages.classify_24_videos') }}",3000)
         }else{
             $.post("{{ route('pc.level_one.submit_video_category') }}",{'_token':"{!! csrf_token() !!}",data:videoClassfiy2},function(data){
