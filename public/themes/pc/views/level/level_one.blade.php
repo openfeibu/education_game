@@ -646,19 +646,19 @@
                         // $(elem).on("click",watchVideo);
                      
                         if(isIn2(elem) == 1){
-                            $(elem).removeClass("c2,c3,c4,c5").addClass("c1")
+                            $(elem).removeClass("c2 c3 c4 c5").addClass("c1")
                             videoClassfiy2[vid] = 3;
                         }else if(isIn2(elem) == 2){
-                            $(elem).removeClass("c1,c3,c4,c5").addClass("c2")
+                            $(elem).removeClass("c1 c3 c4 c5").addClass("c2")
                             videoClassfiy2[vid] = 4;
                         }else if(isIn2(elem) == 3){
-                            $(elem).removeClass("c1,c2,c4,c5").addClass("c3")
+                            $(elem).removeClass("c1 c2 c4 c5").addClass("c3")
                             videoClassfiy2[vid] = 5;
                         }else if(isIn2(elem) == 4){
-                            $(elem).removeClass("c1,c2,c3,c5").addClass("c4")
+                            $(elem).removeClass("c1 c2 c3 c5").addClass("c4")
                             videoClassfiy2[vid] = 6;
                         }else if(isIn2(elem) == 5){
-                            $(elem).removeClass("c1,c2,c3,c4").addClass("c5")
+                            $(elem).removeClass("c1 c2 c3 c4").addClass("c5")
                             videoClassfiy2[vid] = 7;
                         }
                         $(elem).animate({"top":st,"left":sl},200)
