@@ -20,7 +20,7 @@ class LevelOneController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->middleware("auth:user.web");
+        //$this->middleware("auth:user.web");
     }
 
     public function submitTolerateGrade(Request $request)
@@ -196,9 +196,36 @@ class LevelOneController extends BaseController
         $user_id = Auth::user()->id;
         $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
 
+
+        $categories = UserLevelOneVideoCategory::join('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
+            ->join('level_one_video_categories','level_one_video_categories.id','=','user_level_one_video_categories.category_id')
+            ->where('user_level_one_video_categories.user_id',$user_id)
+            ->where('user_level_one_video_categories.history_id',$history_id)
+            ->orderBy('level_one_videos.id','asc')
+            ->select('level_one_videos.slug','user_level_one_video_categories.category_id','level_one_video_categories.parent_id')
+            ->get()
+            ->toArray();
+        $data = [];
+        foreach ($categories as $key => $val)
+        {
+            $data[$val['slug']] = $val['parent_id'] > 0 ? $val['parent_id'] : $val['category_id'];
+        }
+
+        return $this->response
+            ->data($data)
+            ->status("success")
+            ->code(200)
+            ->url(url('/'))
+            ->redirect();
+    }
+
+    public function getUserVideoChildCategory(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
+
         $categories = UserLevelOneVideoCategory::join('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
             ->where('user_level_one_video_categories.user_id',$user_id)
-            ->whereIn('user_level_one_video_categories.category_id',['1','2'])
             ->where('user_level_one_video_categories.history_id',$history_id)
             ->orderBy('level_one_videos.id','asc')
             ->select('level_one_videos.slug','user_level_one_video_categories.category_id')

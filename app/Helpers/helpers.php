@@ -447,6 +447,7 @@ if (!function_exists('theme_asset_lang')) {
         if($lang == 'en')
         {
             $file = str_replace('images','images/'.$lang,$file);
+            $file = str_replace('video','video/'.$lang,$file);
         }
         return app('theme')->asset()->url($file);
     }
