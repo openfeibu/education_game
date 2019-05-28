@@ -38,11 +38,11 @@ class LevelOneController extends BaseController
                 ->redirect();
         }
 
-        $user_id = 10;
+        $user_id = Auth::user()->id;
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',10)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',$user_id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
         $last_user_grade = UserLevelOneVideoTolerateGrade::where('user_id',$user_id)->where('video_id',$video->id);
 
@@ -66,7 +66,7 @@ class LevelOneController extends BaseController
             if(!$history_id)
             {
                 $game_history = GameHistory::create([
-                    'user_id' => 10,
+                    'user_id' => Auth::user()->id,
                     'level_id' => 1,
                 ]);
                 $history_id = $game_history->id;
@@ -91,23 +91,20 @@ class LevelOneController extends BaseController
     public function submitVideoCategory(Request $request)
     {
         $request_data = $request->data;
-
+        $user_id = 10;
         if(!is_array($request_data))
         {
             $request_data = json_decode($request_data,true);
         }
-        $request_data = [
-            'a1' => 1,
-            'a2' => 3
-        ];
+
         $video_category_data = [];
         $i = 0;
 
-        $history_id = GameHistory::where('level_id',1)->where('user_id',10)->orderBy('id','desc')->value('id');
+        $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',10)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',$user_id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
 
         foreach ($request_data as $key => $val)
@@ -115,13 +112,13 @@ class LevelOneController extends BaseController
             $i++;
             // $video_category_data[$val][] = $key;
             $video_category_data[$i] = [
-                'user_id' => 10,
+                'user_id' => $user_id,
                 'video_id' => $key,
                 'category_id' => $val
             ];
             $video = LevelOneVideo::where('slug',$key)->first();
 
-            $last_user_category = UserLevelOneVideoCategory::where('user_id',10)->where('video_id',$video->id);
+            $last_user_category = UserLevelOneVideoCategory::where('user_id',$user_id)->where('video_id',$video->id);
 
             if($last_level_question_user_answer)
             {
@@ -136,7 +133,7 @@ class LevelOneController extends BaseController
                 ]);
             }else{
                 UserLevelOneVideoCategory::create([
-                    'user_id' => 10,
+                    'user_id' => $user_id,
                     'video_id' => $video->id,
                     'history_id' => $history_id,
                     'category_id' => $val
@@ -156,13 +153,13 @@ class LevelOneController extends BaseController
         $category_id = $request->category_id;
         $grade =  $request->grade;
 
-        $user_id = 10;
+        $user_id = Auth::user()->id;
 
-        $history_id = GameHistory::where('level_id',1)->where('user_id',10)->orderBy('id','desc')->value('id');
+        $history_id = GameHistory::where('level_id',1)->where('user_id',Auth::user()->id)->orderBy('id','desc')->value('id');
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',10)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
         $last_user_grade = UserLevelOneVideoCategoryNoticeGrade::where('user_id',$user_id)->where('category_id',$category_id);
 
@@ -194,5 +191,30 @@ class LevelOneController extends BaseController
             ->url(url('/'))
             ->redirect();
     }
+    public function getUserVideoParentCategory(Request $request)
+    {
+        $user_id = 10;
+        $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
 
+        $categories = UserLevelOneVideoCategory::join('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
+            ->where('user_level_one_video_categories.user_id',$user_id)
+            ->whereIn('user_level_one_video_categories.category_id',['1','2'])
+            ->where('user_level_one_video_categories.history_id',$history_id)
+            ->orderBy('level_one_videos.id','asc')
+            ->select('level_one_videos.slug','user_level_one_video_categories.category_id')
+            ->get()
+            ->toArray();
+        $data = [];
+        foreach ($categories as $key => $val)
+        {
+            $data[$val['slug']] = $val['category_id'];
+        }
+
+        return $this->response
+            ->data($data)
+            ->status("success")
+            ->code(200)
+            ->url(url('/'))
+            ->redirect();
+    }
 }
