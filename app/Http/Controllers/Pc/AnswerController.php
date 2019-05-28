@@ -17,7 +17,7 @@ class AnswerController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        //$this->middleware("auth:user.web");
+        $this->middleware("auth:user.web");
     }
 
     public function submitOption(Request $request)

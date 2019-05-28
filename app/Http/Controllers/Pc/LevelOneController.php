@@ -20,7 +20,7 @@ class LevelOneController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        //$this->middleware("auth:user.web");
+        $this->middleware("auth:user.web");
     }
 
     public function submitTolerateGrade(Request $request)
@@ -66,7 +66,7 @@ class LevelOneController extends BaseController
             if(!$history_id)
             {
                 $game_history = GameHistory::create([
-                    'user_id' => Auth::user()->id,
+                    'user_id' => $user_id,
                     'level_id' => 1,
                 ]);
                 $history_id = $game_history->id;
@@ -91,7 +91,7 @@ class LevelOneController extends BaseController
     public function submitVideoCategory(Request $request)
     {
         $request_data = $request->data;
-        $user_id = 10;
+        $user_id = Auth::user()->id;
         if(!is_array($request_data))
         {
             $request_data = json_decode($request_data,true);
@@ -155,11 +155,11 @@ class LevelOneController extends BaseController
 
         $user_id = Auth::user()->id;
 
-        $history_id = GameHistory::where('level_id',1)->where('user_id',Auth::user()->id)->orderBy('id','desc')->value('id');
+        $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
-        $last_level_question_user_answer = UserAnswer::where('user_id',Auth::user()->id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+        $last_level_question_user_answer = UserAnswer::where('user_id',$user_id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
 
         $last_user_grade = UserLevelOneVideoCategoryNoticeGrade::where('user_id',$user_id)->where('category_id',$category_id);
 
@@ -193,7 +193,7 @@ class LevelOneController extends BaseController
     }
     public function getUserVideoParentCategory(Request $request)
     {
-        $user_id = 10;
+        $user_id = Auth::user()->id;
         $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
 
         $categories = UserLevelOneVideoCategory::join('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
