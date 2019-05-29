@@ -20,7 +20,7 @@ class LevelOneController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->middleware("auth:user.web");
+       // $this->middleware("auth:user.web");
     }
 
     public function submitTolerateGrade(Request $request)
@@ -59,7 +59,6 @@ class LevelOneController extends BaseController
         {
             UserLevelOneVideoTolerateGrade::where('id',$last_user_grade->id)
                 ->update([
-                    'video_id' => $video->id,
                     'grade' => $grade
                 ]);
         }else{
@@ -191,11 +190,49 @@ class LevelOneController extends BaseController
             ->url(url('/'))
             ->redirect();
     }
+    public function getUserTolerateGrade(Request $request)
+    {
+        $user_id = 10;
+
+        $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
+
+        $last_level_question_user_answer = UserAnswer::where('user_id',$user_id)->where('level_id',1)->where('question_id',$last_level_question->id)->orderBy('id','desc')->first();
+
+
+        $history_id = UserLevelOneVideoTolerateGrade::where('user_id',$user_id);
+        if($last_level_question_user_answer)
+        {
+            $history_id = $history_id->where('created_at','>',$last_level_question_user_answer->created_at);
+        }
+        $history_id = $history_id->orderBy('id','desc')->value('history_id');
+
+        $data = [];
+
+        if($history_id)
+        {
+            $grades = UserLevelOneVideoTolerateGrade::join('level_one_videos','level_one_videos.id','=','user_level_one_video_tolerate_grades.video_id')
+                ->where('user_level_one_video_tolerate_grades.user_id',$user_id)
+                ->where('user_level_one_video_tolerate_grades.history_id',$history_id)
+                ->select('level_one_videos.slug','user_level_one_video_tolerate_grades.grade')
+                ->orderBy('user_level_one_video_tolerate_grades.video_id','asc')
+                ->get();
+            foreach ($grades as $key => $val)
+            {
+                $data[$val['slug']] = $val['grade'];
+            }
+        }
+
+        return $this->response
+            ->data($data)
+            ->status("success")
+            ->code(200)
+            ->url(url('/'))
+            ->redirect();
+    }
     public function getUserVideoParentCategory(Request $request)
     {
         $user_id = Auth::user()->id;
         $history_id = GameHistory::where('level_id',1)->where('user_id',$user_id)->orderBy('id','desc')->value('id');
-
 
         $categories = UserLevelOneVideoCategory::join('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
             ->join('level_one_video_categories','level_one_video_categories.id','=','user_level_one_video_categories.category_id')

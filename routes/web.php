@@ -85,6 +85,7 @@ Route::group([
     Route::post('/level_one/submit_notice_grade','LevelOneController@submitNoticeGrade')->name('level_one.submit_notice_grade');
     Route::get('/level_one/user_video_parent_category','LevelOneController@getUserVideoParentCategory')->name('level.user_video_parent_category');
     Route::get('/level_one/user_video_child_category','LevelOneController@getUserVideoChildCategory')->name('level.user_video_child_category');
+    Route::get('/level_one/user_video_tolerate_grade','LevelOneController@getUserTolerateGrade')->name('level.user_video_tolerate_grade');
 
 
     Route::get('/user/login','Auth\LoginController@showLoginForm')->name('login');
