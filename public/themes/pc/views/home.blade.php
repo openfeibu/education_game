@@ -54,7 +54,7 @@
             $(".start ").find("img").attr("src","{!! theme_asset("images/start.png") !!}")
             $(".start ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'zh-hk']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/choose.png") !!}")
-            $(".guanka ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'zh-hk']) }}")
+            $(".guanka ").find("a").attr("href","{{ route('pc.levels',['lang' => 'zh-hk']) }}")
         })
         $(".lau-en").on("click",function(){
             if($(this).hasClass("active2")){
@@ -69,7 +69,7 @@
             $(".start ").find("img").attr("src","{!! theme_asset("images/en/start.png") !!}")
             $(".start ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'en']) }}")
             $(".guanka").find("img").attr("src","{!! theme_asset("images/en/choose.png") !!}")
-            $(".guanka ").find("a").attr("href","{{ route('pc.level.level_one',['lang' => 'en']) }}")
+            $(".guanka ").find("a").attr("href","{{ route('pc.levels',['lang' => 'en']) }}")
 
 
         })
