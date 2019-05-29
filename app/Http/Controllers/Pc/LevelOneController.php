@@ -20,7 +20,7 @@ class LevelOneController extends BaseController
     public function __construct()
     {
         parent::__construct();
-       // $this->middleware("auth:user.web");
+        $this->middleware("auth:user.web");
     }
 
     public function submitTolerateGrade(Request $request)
@@ -192,7 +192,7 @@ class LevelOneController extends BaseController
     }
     public function getUserTolerateGrade(Request $request)
     {
-        $user_id = 10;
+        $user_id = Auth::user()->id;
 
         $last_level_question = Question::where('level_id',1)->orderBy('id','desc')->first();
 
