@@ -26,7 +26,7 @@
     <div id="g4-park2">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="d1" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/D1_batch.mp4") !!}"></video>
+            <video id="d1" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/D1_batch.mp4") !!}"></video>
         </div>
     </div>
     <div id="g4-park3">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="question-power3  fb-clearfix delay-2 gdownIn">
                     <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
-                    <!-- <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div> -->
+                    <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/reset.png") !!}" alt=""></div> 
                     <div class="question-last bbtn"><img src="{!! theme_asset_lang("images/last.png") !!}" alt=""></div>
                 </div>
             </div>
@@ -127,14 +127,47 @@
     <div id="g4-park5">
         <div class="tips">
             <div class="tips-item">
-                <p class="gcenterIn delay" style="width: 65%;position: relative;">
-                    <img src="{!! theme_asset_lang("images/g4-16.png") !!}" alt="">
+				<div class="fb-clearfix" style="width: 82%;margin:0 auto">
+					<p class="gcenterIn delay" style="width: 78%;position: relative;float:left">
+						<img src="{!! theme_asset_lang("images/g4-16.png") !!}" alt="">
 
-                    <textarea  id="" cols="30" rows="10" name="g4-park5Answer"></textarea>
+						<textarea  id="" cols="30" rows="10" name="g4-park5Answer"></textarea>
 
-                </p>
-                <br/>
+					</p>
+				<div class="gcenterIn delay" style="width: 22%;position: relative; float:right;text-align:center;margin-top:7%">
+                  <div class="zanItem">
+                    <img src="{!! theme_asset_lang("images/g4-z1.png") !!}" alt="">
+                    <img src="{!! theme_asset_lang("images/g4-z1-a.png") !!}" alt="">
+                  </div>
+                  <div class="zanItem">
+                      <img src="{!! theme_asset_lang("images/g4-z2.png") !!}" alt="">
+                      <img src="{!! theme_asset_lang("images/g4-z2-a.png") !!}" alt="">
+                      
+                  </div>
+                  <div class="zanItem">
+                    <img src="{!! theme_asset_lang("images/g4-z3.png") !!}" alt="">
+                    <img src="{!! theme_asset_lang("images/g4-z3-a.png") !!}" alt="">
+                  </div>
+                  <div class="zanItem">
+                      <img src="{!! theme_asset_lang("images/g4-z4.png") !!}" alt="">
+                      <img src="{!! theme_asset_lang("images/g4-z4-a.png") !!}" alt="">
+                  </div>
+                  <div class="zanItem">
+                    <img src="{!! theme_asset_lang("images/g4-z5.png") !!}" alt="">
+                    <img src="{!! theme_asset_lang("images/g4-z5-a.png") !!}" alt="">
+                  </div>
+                  <div class="zanItem">
+                      <img src="{!! theme_asset_lang("images/g4-z6.png") !!}" alt="">
+                      <img src="{!! theme_asset_lang("images/g4-z6-a.png") !!}" alt="">
+                  </div>
+                  <div class="zanItem">
+                    <img src="{!! theme_asset_lang("images/g4-z7.png") !!}" alt="">
+                    <img src="{!! theme_asset_lang("images/g4-z7-a.png") !!}" alt="">
+                  </div>
 
+              </div>
+                </div>
+		
                 <div class="question-power3  fb-clearfix delay-1 gdownIn">
                     <div class="question-home bbtn"><a href="{{ route('pc.home') }}"><img src="{!! theme_asset_lang("images/home.png") !!}" alt=""></a></div>
                     <div class="question-reset bbtn"><img src="{!! theme_asset_lang("images/return.png") !!}" alt=""></div>
@@ -338,16 +371,19 @@
     loadingNum();
     function loadingNum(){
         timer = setInterval(function(){
-            var n = parseInt($("#loading p span").text());
-            n = ++n > 99 ? 99 : n;
-            $("#loading p span").text(n)
-        },500)
+            var count = $(".video").length;
+			var maxM = parseInt((n/count)*100); 
+			var num = parseInt($("#loading p span").text());
+			num = ++num > maxM ? maxM : num;
+            $("#loading p span").text(num)
+        },200)
     }
     // 判断视频是否完全加载完毕
+	
+	go()
     function go(){
         var count = $(".video").length;
-        ++n;
-        console.log(n)
+       
         if( n == count){
             //  开始
             clearInterval(timer);
@@ -356,6 +392,7 @@
         }else{
             $(".video").eq(n).attr("preload","auto")
         }
+		 ++n;
     }
     // 判断视频是否完全加载完毕
     //视频卡顿提醒
@@ -513,6 +550,12 @@
         g4Park4Out();
         g4Park5In();
     })
+	$("#g4-park4 .question-reset").on("click",function(){
+        //重来
+        g4Park3In();
+        g4Park4Out();
+     
+    })
     //第五步
     $("#g4-park5 .question-reset").on("click",function(){
         g4Park5Out();
@@ -582,8 +625,10 @@
         step--;
     })
     //重来
-    //
-
+    //dian zan
+	 $("#g4-park5 .zanItem").on("click",function(){
+		$(this).toggleClass("active")
+		})
 
 
     //结束

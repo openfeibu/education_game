@@ -310,25 +310,29 @@
     }
 
     var timer = null;
-    var n = 0;
+    var n = 1;
     loadingNum();
     function loadingNum(){
         timer = setInterval(function(){
-            var n = parseInt($("#loading p span").text());
-            n = ++n > 99 ? 99 : n;
-            $("#loading p span").text(n)
-        },500)
+            var count = $(".video").length;
+			var maxM = parseInt((n/count)*100); 
+			console.log(maxM)
+			var num = parseInt($("#loading p span").text());
+			num = ++num > maxM ? maxM : num;
+            $("#loading p span").text(num)
+        },100)
     }
     // 判断视频是否完全加载完毕
     function go(){
-        var count = $(".video").length;
-        ++n;
+        var count = $(".video").length;  
         if( n == count){
             //  开始
+		  $("#loading p span").text(100)
             clearInterval(timer);
             hideLaoding();
             g2Park1In();
         }
+		++n;
     }
     // 判断视频是否完全加载完毕
     //视频卡顿提醒

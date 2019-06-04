@@ -1,3 +1,4 @@
+
 <body class="g2Bg">
 <section id="main">
     <div id="loading">
@@ -113,7 +114,7 @@
     <div class="g1-park2-v" id="g1-park2-1">
         <div class="jump bbtn" style="width: 13.7%"><img src="{!! theme_asset_lang("images/jump.png") !!}" alt=""></div>
         <div class="video_box" >
-            <video id="a1" oncanplaythrough="go()" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="auto" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A1_batch.mp4") !!}"></video>
+            <video id="a1" oncanplaythrough="go()" class="video video-position" style="object-fit:fill;"  width="100%" htyle="object-fit:fill;"  width="100%" height="100%"  preload="none" playsinline="true" webkit-playsinline="true" x-webkit-airplay="allow" airplay="allow"  x5-video-orientation="portrait" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="{!! theme_asset_lang("video/A1_batch.mp4") !!}"></video>
         </div>
     </div>
     <div class="g1-park2-v" id="g1-park2-2">
@@ -295,6 +296,7 @@
     <div id="g1-park5">
         <div class="tips">
             <div class="tips-item">
+				<p class="gcenterIn" style="width: 65%;position: fixed;top: 0;left:17.5%"><img src="{!! theme_asset_lang("images/g1-26.png") !!}" alt=""></p>
                 <div class="moveBox fb-clearfix">
                     <div class="g1-video-box fb-clearfix">
                         <div class="g1-video-item2 ">
@@ -421,6 +423,7 @@
                             videoClassfiy[vid] = 1;
                         }else if(isIn(elem) == 2){
                             $(elem).removeClass("c1").addClass("c2")
+							$(".g1-video-item3").eq(itemNum).css("z-index","-1").removeClass("g1-video-item3-1")
                             videoClassfiy[vid] = 2;
                         }
 
@@ -515,6 +518,7 @@
     <div id="g1-park7">
         <div class="tips">
             <div class="tips-item">
+			 <p class="gcenterIn" style="width: 65%;position: fixed;top: 0;left:17.5%"><img src="{!! theme_asset_lang("images/g1-26.png") !!}" alt=""></p>
                 <div class="moveBox2 fb-clearfix">
                     <div class="g1-video-box fb-clearfix">
                         <div class="g1-video-item3 ">
@@ -873,14 +877,14 @@
 </section>
 </body>
 <script>
-    // g2Park1In();
+   
     function hideLaoding(){
         $("#loading").hide()
     }
     function g1Park1In(){
 		
 		
-        $("#g1-park5,#g1-park7").hide().css("opacity",1);
+        $("#g1-park5,#g1-park7").hide().css({"opacity":1,"z-index":1});
         $("#g1-park1").fadeIn()
     }
     function g1Park1Out(){
@@ -1017,26 +1021,38 @@
     loadingNum();
     function loadingNum(){
         timer = setInterval(function(){
-            var n = parseInt($("#loading p span").text());
-            n = ++n > 99 ? 99 : n;
-            $("#loading p span").text(n)
-        },400)
+			var count = $(".video").length;
+			var maxM = parseInt((n/count)*100); 
+			var num = parseInt($("#loading p span").text());
+			num = ++num > maxM ? maxM : num;
+            $("#loading p span").text(num)
+        },100)
     }
-    // 判断视频是否完全加载完毕
-    function go(){
-        var count = $(".video").length;
-        ++n;
+	go();
+	function go(){
+		var count = $(".video").length;
+		if( n == count){
+			//  开始
+			$("#loading p span").text(100)
+			clearInterval(timer);
+			hideLaoding();
+			g1Park1In();
+		}else{
+			$(".g1-park2-v").eq(n).find("video").attr("preload","auto")
+		}
+		++n;
+	}
+    //任务一缓存
+	$.getJSON("/level_one/user_video_tolerate_grade",{},function(data){
+		if(data.code == 200){
+			videoScore = data.data;
+			$.each(videoScore,function(a,b){
+				$(".g1-video-item").eq(parseInt(a.replace("a",""))-1).addClass("active")
+			})
+		}
+		
+	})
 	
-        if( n == count){
-            //  开始
-            clearInterval(timer);
-            hideLaoding();
-            g1Park1In();
-        }else{
-            $(".g1-park2-v").eq(n).find("video").attr("preload","auto")
-        }
-    }
-    // 判断视频是否完全加载完毕
     //视频卡顿提醒
     function videoWaiting(){
         fbAlert("{{ trans('messages.video_loading') }}",3000)
