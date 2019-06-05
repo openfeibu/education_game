@@ -19,13 +19,11 @@ class AnswerController extends BaseController
     public function __construct()
     {
         parent::__construct();
-       // $this->middleware("auth:user.web");
+        $this->middleware("auth:user.web");
     }
 
     public function submitOption(Request $request)
     {
-        $user_id = 10;
-
         $option_id = $request->input('option_id',0);
         $question_id = $request->input('question_id',0);
         $content = $request->input('content','');
