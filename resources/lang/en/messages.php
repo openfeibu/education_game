@@ -42,7 +42,7 @@ return [
     'choose_option' => 'Please choose your answer',
     'enter_answer' => 'Please enter your answer',
     'video_not_exist' => "Video doesn't exist",
-    'classify_24_videos' => 'Please classify the 24 videos',
+    'classify_24_videos' => 'Please classify the videos',
     'rate_24_videos' => 'Please rate the 24 videos',
     'rate_5_behaviors' => 'Please rate the 5 behaviors',
     'enter_e_answer' => 'Please enter answer E',
