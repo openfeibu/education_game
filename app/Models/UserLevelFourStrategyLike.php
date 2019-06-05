@@ -9,7 +9,7 @@ use App\Traits\Filer\Filer;
 use App\Traits\Hashids\Hashids;
 use App\Traits\Trans\Translatable;
 
-class GameHistory extends BaseModel
+class UserLevelFourStrategyLike extends BaseModel
 {
     use Filer, Hashids, Slugger, Translatable, LogsActivity;
 
@@ -18,10 +18,6 @@ class GameHistory extends BaseModel
      *
      * @var array
      */
-    protected $config = 'model.game.game_history';
+    protected $config = 'model.level_four.user_level_four_strategy_like';
 
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
 }

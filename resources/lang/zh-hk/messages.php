@@ -21,19 +21,19 @@ return [
     ],
 
     'error'         => [
-        'create' => '无法创建 :Module 。',
-        'update' => '无法更新 :Module 。',
-        'delete' => '无法删除 :Module 。',
+        'create' => '無法創建 :Module 。',
+        'update' => '無法更新 :Module 。',
+        'delete' => '無法删除 :Module 。',
     ],
 
-    'unprocessable' => '无法处理的请求。',
-    'areyousure'    => '是否确定？',
+    'unprocessable' => '無法處理的請求。',
+    'areyousure'    => '是否確定？',
     'type'          => [
         'success' => '成功',
-        'error'   => '错误',
+        'error'   => '錯誤',
     ],
     'submit_success' => '提交成功',
-    'change_lang_success' => '设置成功',
+    'change_lang_success' => '設置成功',
 
     'login' => [
         'no_complete' => '請完善信息後提交'

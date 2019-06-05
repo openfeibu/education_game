@@ -1,8 +1,8 @@
 <div class="main">
     <div class="layui-card fb-minNav">
         <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-            <a href="﻿{{ route('home') }}">主页</a><span lay-separator="">/</span>
-            <a><cite>添加{{ trans('permission.name') }}</cite></a>
+            <a href="﻿{{ route('home') }}">{{ trans('app.home') }}</a><span lay-separator="">/</span>
+            <a><cite>{{ trans('app.add') }}{{ trans('permission.name') }}</cite></a>
         </div>
     </div>
     <div class="main_full">
@@ -12,25 +12,25 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans('permission.label.name') }}</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入{{ trans('permission.label.name') }}" class="layui-input" value="{{$permission->name}}">
+                            <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="{{ trans('user.please_input') }}{{ trans('permission.label.name') }}" class="layui-input" value="{{$permission->name}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans('permission.label.slug') }}</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="slug" lay-verify="slug" autocomplete="off" placeholder="请输入{{ trans('permission.label.slug') }}" class="layui-input" value="{{$permission->slug}}">
+                            <input type="text" name="slug" lay-verify="slug" autocomplete="off" placeholder="{{ trans('user.please_input') }}{{ trans('permission.label.slug') }}" class="layui-input" value="{{$permission->slug}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans('permission.label.icon') }}</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="icon" lay-verify="icon" autocomplete="off" placeholder="请输入{{ trans('permission.label.icon') }}" class="layui-input" value="{{$permission->icon}}">
+                            <input type="text" name="icon" lay-verify="icon" autocomplete="off" placeholder="{{ trans('user.please_input') }}{{ trans('permission.label.icon') }}" class="layui-input" value="{{$permission->icon}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans('permission.label.order') }}</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="order" lay-verify="order" autocomplete="off" placeholder="请输入{{ trans('permission.label.order') }}" class="layui-input" value="{{$permission->order}}">
+                            <input type="text" name="order" lay-verify="order" autocomplete="off" placeholder="{{ trans('user.please_input') }}{{ trans('permission.label.order') }}" class="layui-input" value="{{$permission->order}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('user.submit') }}</button>
                         </div>
                     </div>
                     {!!Form::token()!!}

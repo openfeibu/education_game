@@ -1,8 +1,8 @@
 <div class="main">
     <div class="layui-card fb-minNav">
         <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-            <a href="﻿{{ route('home') }}">主页</a><span lay-separator="">/</span>
-            <a><cite>{{ trans('permission.name') }}管理</cite></a>
+            <a href="﻿{{ route('home') }}">{{ trans('app.home') }}</a><span lay-separator="">/</span>
+            <a><cite>{{ trans('permission.name') }}{{ trans('app.manage') }}</cite></a>
         </div>
     </div>
 
@@ -10,8 +10,8 @@
         <div class="layui-col-md12">
             <div class="tabel-message">
                 <div class="layui-inline tabel-btn">
-                    <button class="layui-btn layui-btn-warm "><a href="{{guard_url('permission/create')}}">添加{{ trans('permission.name') }}</a></button>
-                    <button class="layui-btn layui-btn-primary " data-type="del" data-events="del">删除</button>
+                    <button class="layui-btn layui-btn-warm "><a href="{{guard_url('permission/create')}}">{{ trans('app.add') }}{{ trans('permission.name') }}</a></button>
+                    <button class="layui-btn layui-btn-primary " data-type="del" data-events="del">{{ trans('app.delete') }}</button>
                 </div>
             </div>
 
@@ -22,8 +22,8 @@
     </div>
 </div>
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-sm" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-sm" lay-event="edit">{{ trans('app.edit') }}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">{{ trans('app.delete') }}</a>
 </script>
 <script type="text/html" id="checkboxTEM">
     <input type="checkbox" name="is_menu" value="@{{d.id}}" lay-skin="switch" lay-text="菜单|否" lay-filter="lock" @{{ d.is_menu == 1 ? 'checked' : '' }}>
@@ -46,7 +46,7 @@
                 ,{field:'icon',title:'{{ trans('permission.label.icon') }}',edit: 'text', minWidth:100}
                 ,{field:'order',title:'{{ trans('permission.label.order') }}',edit: 'text'}
                 ,{field:'is_menu',title:'是否菜单', width:200,toolbar:'#checkboxTEM' }
-                ,{field:'score',title:'操作', width:200, align: 'right',toolbar:'#barDemo'}
+                ,{field:'score',title:'{{ trans('app.actions') }}', width:200, align: 'right',toolbar:'#barDemo'}
             ]]
             ,id: 'fb-table'
             ,page: false
@@ -57,9 +57,9 @@
             var data = obj.data;
             data['_token'] = "{!! csrf_token() !!}";
             if(obj.event === 'detail'){
-                layer.msg('ID：'+ data.id + ' 的查看操作');
+                layer.msg('ID：'+ data.id + ' 的查看{{ trans('app.actions') }}');
             } else if(obj.event === 'del'){
-                layer.confirm('真的删除行么', function(index){
+                layer.confirm('真的{{ trans('app.delete') }}行么', function(index){
                     layer.close(index);
                     var load = layer.load();
                     $.ajax({
@@ -124,11 +124,11 @@
                 var i = 0;
                 data.forEach(function(v){ data_id_obj[i] = v.id; i++});
                 data.length == 0 ?
-                        layer.msg('请选择要删除的数据', {
+                        layer.msg('请选择要{{ trans('app.delete') }}的数据', {
                             time: 2000 //2秒关闭（如果不配置，默认是3秒）
                         })
                         :
-                        layer.confirm('是否删除已选择的数据',{title:'提示'},function(index){
+                        layer.confirm('是否{{ trans('app.delete') }}已选择的数据',{title:'提示'},function(index){
                             layer.close(index);
                             var load = layer.load();
                             $.ajax({

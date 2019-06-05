@@ -1,7 +1,7 @@
 <div class="main">
     <div class="layui-card fb-minNav">
         <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-            <a href="﻿{{ route('home') }}">主页</a><span lay-separator="">/</span>
+            <a href="﻿{{ route('home') }}">{{ trans('app.home') }}</a><span lay-separator="">/</span>
             <a><cite>修改密码</cite></a><span lay-separator="">/</span>
         </div>
     </div>
@@ -13,25 +13,25 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">旧密码</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="old_password" lay-verify="companyName" autocomplete="off" placeholder="请输入旧密码" class="layui-input" value="">
+                            <input type="text" name="old_password" lay-verify="companyName" autocomplete="off" placeholder="{{ trans('user.please_input') }}旧密码" class="layui-input" value="">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">新密码</label>
                         <div class="layui-input-inline">
-                            <input type="password" name="password" lay-verify="address" autocomplete="off" placeholder="请输入新密码" class="layui-input" value="">
+                            <input type="password" name="password" lay-verify="address" autocomplete="off" placeholder="{{ trans('user.please_input') }}新密码" class="layui-input" value="">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">确认新密码</label>
                         <div class="layui-input-inline">
-                            <input type="password" name="password_confirmation" lay-verify="address" autocomplete="off" placeholder="请输入确认新密码" class="layui-input" value="">
+                            <input type="password" name="password_confirmation" lay-verify="address" autocomplete="off" placeholder="{{ trans('user.please_input') }}确认新密码" class="layui-input" value="">
                         </div>
                     </div>
                     {!!Form::token()!!}
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('user.submit') }}</button>
                         </div>
                     </div>
                 </form>

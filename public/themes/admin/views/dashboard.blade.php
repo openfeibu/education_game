@@ -1,6 +1,6 @@
 
     <div class="x-body layui-anim layui-anim-up">
-        <blockquote class="layui-elem-quote">欢迎管理员：
+        <blockquote class="layui-elem-quote">欢迎{{ trans('app.manage') }}员：
             <span class="x-red">test</span>！当前时间:2018-04-25 20:50:53</blockquote>
         <fieldset class="layui-elem-field">
             <legend>数据统计</legend>
@@ -92,7 +92,7 @@
                             <th>服务器地址</th>
                             <td>x.xuebingsi.com</td></tr>
                         <tr>
-                            <th>操作系统</th>
+                            <th>{{ trans('app.actions') }}系统</th>
                             <td>WINNT</td></tr>
                         <tr>
                             <th>运行环境</th>

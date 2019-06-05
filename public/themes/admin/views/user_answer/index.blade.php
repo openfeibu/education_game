@@ -10,8 +10,8 @@
             <!--
             <div class="tabel-message">
                 <div class="layui-inline tabel-btn">
-                    <button class="layui-btn layui-btn-warm "><a href="{{guard_url('recruit/create')}}">添加招聘信息</a></button>
-                    <button class="layui-btn layui-btn-primary " data-type="del" data-events="del">删除</button>
+                    <button class="layui-btn layui-btn-warm "><a href="{{guard_url('recruit/create')}}">{{ trans('app.add') }}招聘信息</a></button>
+                    <button class="layui-btn layui-btn-primary " data-type="del" data-events="del">{{ trans('app.delete') }}</button>
                 </div>
             </div>
 
@@ -24,8 +24,8 @@
 </div>
 
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-sm" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-sm" lay-event="edit">{{ trans('app.edit') }}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">{{ trans('app.delete') }}</a>
 </script>
 <script type="text/html" id="imageTEM">
     <img src="@{{d.image}}" alt="" height="28">

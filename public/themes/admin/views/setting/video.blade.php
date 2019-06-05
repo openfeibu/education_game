@@ -1,8 +1,8 @@
 <div class="main">
     <div class="layui-card fb-minNav">
         <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-            <a href="﻿{{ route('home') }}">主页</a><span lay-separator="">/</span>
-            <a><cite>宣传视频管理</cite></a><span lay-separator="">/</span>
+            <a href="﻿{{ route('home') }}">{{ trans('app.home') }}</a><span lay-separator="">/</span>
+            <a><cite>宣传视频{{ trans('app.manage') }}</cite></a><span lay-separator="">/</span>
         </div>
     </div>
     <div class="main_full">
@@ -12,13 +12,13 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">宣传视频链接</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="video_vid" lay-verify="publicityVideo" autocomplete="off" placeholder="请输入宣传视频链接" class="layui-input" value="{{$video['video_vid']}}">
+                            <input type="text" name="video_vid" lay-verify="publicityVideo" autocomplete="off" placeholder="{{ trans('user.please_input') }}宣传视频链接" class="layui-input" value="{{$video['video_vid']}}">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('user.submit') }}</button>
                         </div>
                     </div>
                 </form>

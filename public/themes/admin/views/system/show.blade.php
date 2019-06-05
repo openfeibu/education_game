@@ -1,9 +1,9 @@
 <div class="main">
     <div class="layui-card fb-minNav">
         <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-            <a href="﻿{{ route('home') }}">主页</a><span lay-separator="">/</span>
-            <a><cite>后台管理员</cite></a><span lay-separator="">/</span>
-            <a><cite>添加系统文章</cite></a>
+            <a href="﻿{{ route('home') }}">{{ trans('app.home') }}</a><span lay-separator="">/</span>
+            <a><cite>后台{{ trans('app.manage') }}员</cite></a><span lay-separator="">/</span>
+            <a><cite>{{ trans('app.add') }}系统文章</cite></a>
         </div>
     </div>
     <div class="main_full">
@@ -13,13 +13,13 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">标题</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="{{$page->title}}">
+                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="{{ trans('user.please_input') }}标题" class="layui-input" value="{{$page->title}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">标示</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="slug" lay-verify="title" autocomplete="off" placeholder="请输入标示" class="layui-input" value="{{$page->slug}}">
+                            <input type="text" name="slug" lay-verify="title" autocomplete="off" placeholder="{{ trans('user.please_input') }}标示" class="layui-input" value="{{$page->slug}}">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('user.submit') }}</button>
                         </div>
                     </div>
                     {!!Form::token()!!}

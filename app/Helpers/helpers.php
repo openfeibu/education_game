@@ -112,6 +112,7 @@ if (!function_exists('trans_url')) {
      */
     function trans_url($url)
     {
+        return $url;
         return Trans::to($url);
     }
 
@@ -268,9 +269,9 @@ if (!function_exists('guard_url')) {
     {
         $prefix = empty(getenv('guard')) ? 'user' : current(explode(".", getenv('guard')));
         if ($translate){
-            return trans_url($prefix . '/' . $url);
+            return trans_url('/'.$prefix . '/' . $url);
         }
-        return $prefix . '/' . $url;
+        return '/'.$prefix . '/' . $url;
     }
 
 }
