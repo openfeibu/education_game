@@ -120,7 +120,7 @@ class GameHistoryResourceController extends BaseController
                 $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
                 foreach ($questions as $key => $question)
                 {
-                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('question_id',$question['id'])->first();
+                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('question_id',$question['id'])->first();
                     $user_answers[$key]['answer_content'] = $user_answer['content'];
                     if($user_answer['option_id'])
                     {
@@ -130,7 +130,7 @@ class GameHistoryResourceController extends BaseController
                     $user_answers[$key]['question_content'] = $question['content'];
                 }
 
-                $user_level_four_strategy_likes = UserLevelFourStrategyLike::join('level_four_strategies','level_four_strategies.id','=','user_level_four_strategy_like.strategy_id')->select('level_four_strategies.content')->get();
+                $user_level_four_strategy_likes = UserLevelFourStrategyLike::join('level_four_strategies','level_four_strategies.id','=','user_level_four_strategy_like.strategy_id')->where('user_level_four_strategy_like.user_id',$game_history->user_id)->where('user_level_four_strategy_like.history_id',$game_history->id)->select('level_four_strategies.content')->get();
 
                 $data = compact('user_answers','user_level_four_strategy_likes');
 
@@ -140,7 +140,7 @@ class GameHistoryResourceController extends BaseController
                 $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
                 foreach ($questions as $key => $question)
                 {
-                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('question_id',$question['id'])->first();
+                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('question_id',$question['id'])->first();
                     if($user_answer['option_id'])
                     {
                         $content = Option::where('question_id',$question['id'])->value('content');

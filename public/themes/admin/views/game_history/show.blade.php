@@ -58,10 +58,6 @@
                             </div>
                         @endforeach
 
-                        <div class="layui-form-item">
-                            <label class="layui-input-block">{{ trans('level.level_four.question_two') }}</label>
-                        </div>
-
                         @foreach($user_level_four_strategy_likes as $key => $user_level_four_strategy_like)
                             <div class="layui-form-item">
                                 <div class="layui-input-block">
