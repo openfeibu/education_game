@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\UserLevelOneVideoCategory;
-use App\Models\UserLevelOneVideoTolerateGrade;
+use App\Models\UserLevelFourStrategyLike;
 use DB;
 use App\Http\Controllers\Admin\ResourceController as BaseController;
 use Illuminate\Http\Request;
+use App\Models\LevelOneVideoCategory;
+use App\Models\Question;
+use App\Models\UserLevelOneVideoCategory;
+use App\Models\UserLevelOneVideoTolerateGrade;
 use App\Models\UserAnswer;
-use App\Models\Option;
 use App\Models\GameHistory;
+use App\Models\Option;
+
 
 class GameHistoryResourceController extends BaseController
 {
@@ -49,7 +53,7 @@ class GameHistoryResourceController extends BaseController
                 ->output();
         }
 
-        return $this->response->title(trans('app.admin.panel'))
+        return $this->response->title(trans('game.name'))
             ->view('game_history.index')
             ->output();
     }
@@ -61,24 +65,96 @@ class GameHistoryResourceController extends BaseController
         {
             case '1' :
                 $user_level_one_video_tolerate_grades = UserLevelOneVideoTolerateGrade::rightJoin('level_one_videos','level_one_videos.id','=','user_level_one_video_tolerate_grades.video_id')
-                    ->select('level_one_videos.video_path','user_level_one_video_tolerate_grades.grade')
+                    ->select('level_one_videos.video_path','level_one_videos.video_thumb_path','user_level_one_video_tolerate_grades.grade')
                     ->where('user_id',$game_history->user_id)
                     ->where('history_id',$game_history->id)
                     ->orderBy('video_id','asc')
                     ->get()
                     ->toArray();
 
-                foreach ($user_level_one_video_tolerate_grades as $key => $user_level_one_video_tolerate_grade)
+
+                $user_parent_video_category_arr = [];
+                $user_child_video_category_arr = [];
+                $parent_video_categories = LevelOneVideoCategory::where('parent_id',0)->get()->toArray();
+                $i = 0;
+                foreach ($parent_video_categories as $key => $parent_video_category)
                 {
-                    $user_level_one_video_tolerate_grades[$key]['video_path'] = config('common.video_path').'/'.$user_level_one_video_tolerate_grade['video_path'];
-                    $user_level_one_video_tolerate_grades[$key]['video_thumb_path'] = config('common.video_path').'/'.$user_level_one_video_tolerate_grade['video_thumb_path'];
+                    $user_parent_video_category_arr[$i] = $parent_video_category;
+
+                    $children_video_category_ids = LevelOneVideoCategory::where('parent_id',$parent_video_category['id'])->pluck('id')->toArray();
+                    $ids = $children_video_category_ids;
+                    array_push($ids,$parent_video_category['id']);
+
+                    $user_level_one_video_categories = UserLevelOneVideoCategory::rightJoin('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
+                        ->join('level_one_video_categories','level_one_video_categories.id','=','user_level_one_video_categories.category_id')
+                        ->select('level_one_videos.video_path','level_one_videos.video_thumb_path','user_level_one_video_categories.category_id','level_one_video_categories.name')
+                        ->where('user_level_one_video_categories.user_id',$game_history->user_id)
+                        ->where('user_level_one_video_categories.history_id',$game_history->id)
+                        ->whereIn('level_one_video_categories.id',$ids)
+                        ->orderBy('video_id','asc')
+                        ->get()
+                        ->toArray();
+
+                    $user_parent_video_category_arr[$i]['videos'] = $user_level_one_video_categories;
+
+                    foreach ($children_video_category_ids as $key => $children_video_category_id)
+                    {
+                        $user_child_video_category_arr[$children_video_category_id] = LevelOneVideoCategory::where('id',$children_video_category_id)->first()->toArray();
+                        $user_child_video_category_arr[$children_video_category_id]['videos'] = UserLevelOneVideoCategory::rightJoin('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
+                            ->join('level_one_video_categories','level_one_video_categories.id','=','user_level_one_video_categories.category_id')
+                            ->select('level_one_videos.video_path','level_one_videos.video_thumb_path','user_level_one_video_categories.category_id','level_one_video_categories.name')
+                            ->where('user_level_one_video_categories.user_id',$game_history->user_id)
+                            ->where('user_level_one_video_categories.history_id',$game_history->id)
+                            ->where('level_one_video_categories.id',$children_video_category_id)
+                            ->orderBy('video_id','asc')
+                            ->get()
+                            ->toArray();
+                    }
+                    $i++;
                 }
 
-                $user_level_one_video_categories = UserLevelOneVideoCategory::rightJoin('level_one_videos','level_one_videos.id','=','user_level_one_video_categories.video_id')
-                    ->where('user_level_one_video_categories.user_id',$game_history->user_id)
-                    ->where('user_level_one_video_categories.history_id',$game_history->id)
-                    ->get();
+                $data = compact('user_level_one_video_tolerate_grades','user_parent_video_category_arr','user_child_video_category_arr');
+                break;
+            case "4":
+                $user_answers = [];
+                $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
+                foreach ($questions as $key => $question)
+                {
+                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('question_id',$question['id'])->first();
+                    $user_answers[$key]['answer_content'] = $user_answer['content'];
+                    if($user_answer['option_id'])
+                    {
+                        $content = Option::where('question_id',$question['id'])->value('content');
+                        $user_answers[$key]['answer_content'] = !empty($user_answer['content'])? $user_answer['content'] : $content;
+                    }
+                    $user_answers[$key]['question_content'] = $question['content'];
+                }
+
+                $user_level_four_strategy_likes = UserLevelFourStrategyLike::join('level_four_strategies','level_four_strategies.id','=','user_level_four_strategy_like.strategy_id')->select('level_four_strategies.content')->get();
+
+                $data = compact('user_answers','user_level_four_strategy_likes');
+
+                break;
+            default:
+                $user_answers = [];
+                $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
+                foreach ($questions as $key => $question)
+                {
+                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('question_id',$question['id'])->first();
+                    if($user_answer['option_id'])
+                    {
+                        $content = Option::where('question_id',$question['id'])->value('content');
+                    }
+                    $user_answers[$key]['question_content'] = $question['content'];
+                    $user_answers[$key]['answer_content'] = !empty($user_answer['content'] )? $user_answer['content'] : $content;
+                }
+                $data = compact('user_answers');
                 break;
         }
+        $data['level_id'] = $level_id;
+        return $this->response->title(trans('game.name'))
+            ->view('game_history.show')
+            ->data($data)
+            ->output();
     }
 }
