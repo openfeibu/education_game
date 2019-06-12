@@ -168,5 +168,10 @@ button.layui-close{
 	padding:0 !important;
 	
 }
+.option_selected{
 
+    background: #eee;
+    padding:2px 2px !important;
+    border-radius:5px;
+}
 

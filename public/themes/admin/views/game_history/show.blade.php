@@ -51,36 +51,81 @@
                                 @endforeach
                             </div>
                       
-                    @endforeach
-                    @elseif($level_id == 4)
-                        @foreach($user_answers as $key => $user_answer)
-                       
-                                <label class="layui-input-block">問題：{{ $user_answer['question_content'] }}</label>
-                          
-                                <div class="layui-input-block">
-                                    選項/答案：{{ $user_answer['answer_content'] }}
+                        @endforeach
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-input-block tit">{{ trans('level.level_one.question_four') }}</label>
+                        @foreach($user_level_one_video_category_notice_grades as $key => $user_level_one_video_category_notice_grade)
+
+                            <label class="layui-input-block tit2">{{ $user_level_one_video_category_notice_grade['name'] }}:</label>
+                            <div class="layui-input-block layui-col-space10 fb-clearfix">
+                                <p>{{ $user_level_one_video_category_notice_grade['grade'] }}分</p>
+                            </div>
+
+                        @endforeach
+                    </div>
+
+                    @foreach($user_answers as $key => $user_answer)
+                        <div class="layui-form-item">
+                            <label class="layui-input-block tit">問題：{{ $user_answer['question_content'] }}</label>
+                            @foreach($user_answer['options'] as $option_key => $option)
+                                <div class="layui-input-block option {{ $option['selected_class'] }}">
+                                    {{ $option['letter'] }}.{{ $option['content'] }}
                                 </div>
-                       
+                            @endforeach
+                            @if($user_answer['answer_content'])
+                            <div class="layui-input-block">
+                                {{ $user_answer['answer_content'] }}
+                            </div>
+                            @endif
+                        </div>
+                    @endforeach
+
+                    @elseif($level_id == 4)
+
+                        @foreach($user_answers as $key => $user_answer)
+                            <div class="layui-form-item">
+                                <label class="layui-input-block tit">問題：{{ $user_answer['question_content'] }}</label>
+                                @foreach($user_answer['options'] as $option_key => $option)
+                                    <div class="layui-input-block option {{ $option['selected_class'] }}">
+                                        {{ $option['letter'] }}.{{ $option['content'] }}
+                                    </div>
+                                @endforeach
+                                @if($user_answer['answer_content'])
+                                    <div class="layui-input-block">
+                                        @if($user_answer['options']) 其他答案：@endif{{ $user_answer['answer_content'] }}
+                                    </div>
+                                @endif
+                            </div>
                         @endforeach
 
-                        @foreach($user_level_four_strategy_likes as $key => $user_level_four_strategy_like)
-                            
-                                <div class="layui-input-block">
-                                    {{ $user_level_four_strategy_like['content'] }}
-                                </div>
-                            
-                        @endforeach
+
+                        <div class="layui-form-item">
+                            <?php $i=0;?>
+                            @foreach($level_four_strategies as $key => $strategy)
+                            <?php $i++ ?>
+                            <div class="layui-input-block option {{ $strategy['selected_class'] }}">
+                                {{ $i }}.{{ $strategy['content'] }}
+                            </div>
+                            @endforeach
+                        </div>
 
                     @else
                         @foreach($user_answers as $key => $user_answer)
-                       
-                            <label class="layui-input-block">問題：{{ $user_answer['question_content'] }}</label>
-                    
-                      
-                            <div class="layui-input-block">
-                                選項/答案：{{ $user_answer['answer_content'] }}
+                            <div class="layui-form-item">
+                                <label class="layui-input-block tit">問題：{{ $user_answer['question_content'] }}</label>
+                                @foreach($user_answer['options'] as $option_key => $option)
+                                    <div class="layui-input-block option {{ $option['selected_class'] }}">
+                                        {{ $option['letter'] }}.{{ $option['content'] }}
+                                    </div>
+                                @endforeach
+                                @if($user_answer['answer_content'])
+                                    <div class="layui-input-block">
+                                        {{ $user_answer['answer_content'] }}
+                                    </div>
+                                @endif
                             </div>
-                        
                         @endforeach
                     @endif
                     </div>

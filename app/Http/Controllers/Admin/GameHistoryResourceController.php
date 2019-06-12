@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\LevelFourStrategy;
 use App\Models\UserLevelFourStrategyLike;
+use App\Models\UserLevelOneVideoCategoryNoticeGrade;
 use DB;
 use App\Http\Controllers\Admin\ResourceController as BaseController;
 use Illuminate\Http\Request;
@@ -113,26 +115,83 @@ class GameHistoryResourceController extends BaseController
                     $i++;
                 }
 
-                $data = compact('user_level_one_video_tolerate_grades','user_parent_video_category_arr','user_child_video_category_arr');
+                $user_level_one_video_category_notice_grades = UserLevelOneVideoCategoryNoticeGrade::join('level_one_video_categories','level_one_video_categories.id','=','user_level_one_video_category_notice_grades.category_id')
+                    ->select('user_level_one_video_category_notice_grades.category_id','user_level_one_video_category_notice_grades.grade','level_one_video_categories.name')
+                    ->where('user_level_one_video_category_notice_grades.user_id',$game_history->user_id)
+                    ->where('user_level_one_video_category_notice_grades.history_id',$game_history->id)
+                    ->orderBy('level_one_video_categories.id','asc')
+                    ->get()
+                    ->toArray();
+
+
+                $user_answers = [];
+                $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
+                foreach ($questions as $key => $question)
+                {
+                    $user_answers[$key]['question_id'] = $question['id'];
+                    $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('question_id',$question['id'])->first();
+
+                    $user_answers[$key]['answer_content'] = $user_answer['content'];
+                    $user_answers[$key]['question_content'] = $question['content'];
+
+                    $options = Option::where('question_id',$question['id'])->get()->toArray();
+                    $i = 0;
+                    foreach ($options as $option_key => $option)
+                    {
+                        $i++;
+                        if($user_answer['option_id'] == $option['id'])
+                        {
+                            $options[$option_key]['selected_class'] = 'option_selected';
+                        }else{
+                            $options[$option_key]['selected_class'] = '';
+                        }
+                        $options[$option_key]['letter'] = config('common.letter.'.$i);
+                    }
+                    $user_answers[$key]['options'] = $options;
+                }
+                $data = compact('user_answers','user_level_one_video_tolerate_grades','user_parent_video_category_arr','user_child_video_category_arr','user_level_one_video_category_notice_grades');
                 break;
             case "4":
                 $user_answers = [];
                 $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
                 foreach ($questions as $key => $question)
                 {
+                    $user_answers[$key]['question_id'] = $question['id'];
                     $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('question_id',$question['id'])->first();
                     $user_answers[$key]['answer_content'] = $user_answer['content'];
-                    if($user_answer['option_id'])
-                    {
-                        $content = Option::where('question_id',$question['id'])->value('content');
-                        $user_answers[$key]['answer_content'] = !empty($user_answer['content'])? $user_answer['content'] : $content;
-                    }
                     $user_answers[$key]['question_content'] = $question['content'];
+
+                    $options = Option::where('question_id',$question['id'])->get()->toArray();
+                    $i = 0;
+                    foreach ($options as $option_key => $option)
+                    {
+                        $i++;
+                        if($user_answer['option_id'] == $option['id'])
+                        {
+                            $options[$option_key]['selected_class'] = 'option_selected';
+                        }else{
+                            $options[$option_key]['selected_class'] = '';
+                        }
+                        $options[$option_key]['letter'] = config('common.letter.'.$i);
+                    }
+                    $user_answers[$key]['options'] = $options;
                 }
 
-                $user_level_four_strategy_likes = UserLevelFourStrategyLike::join('level_four_strategies','level_four_strategies.id','=','user_level_four_strategy_like.strategy_id')->where('user_level_four_strategy_like.user_id',$game_history->user_id)->where('user_level_four_strategy_like.history_id',$game_history->id)->select('level_four_strategies.content')->get();
+                $user_level_four_strategy_likes = UserLevelFourStrategyLike::rightJoin('level_four_strategies','level_four_strategies.id','=','user_level_four_strategy_like.strategy_id')->where('user_level_four_strategy_like.user_id',$game_history->user_id)->where('user_level_four_strategy_like.history_id',$game_history->id)->select('level_four_strategies.content')->get()->toArray();
 
-                $data = compact('user_answers','user_level_four_strategy_likes');
+
+                $level_four_strategies = LevelFourStrategy::orderBy('id','asc')->get()->toArray();
+                foreach ($level_four_strategies as $key => $strategy)
+                {
+                    $user_level_four_strategy_like= UserLevelFourStrategyLike::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('strategy_id',$strategy['id'])->first();
+                    if($user_level_four_strategy_like)
+                    {
+                        $level_four_strategies[$key]['selected_class'] = 'option_selected';
+                    }else{
+                        $level_four_strategies[$key]['selected_class'] = '';
+                    }
+                }
+                $data = compact('user_answers','user_level_four_strategy_likes','level_four_strategies');
 
                 break;
             default:
@@ -140,13 +199,25 @@ class GameHistoryResourceController extends BaseController
                 $questions = Question::where('level_id',$level_id)->orderBy('order','asc')->orderBy('id','asc')->get()->toArray();
                 foreach ($questions as $key => $question)
                 {
+                    $user_answers[$key]['question_id'] = $question['id'];
                     $user_answer = UserAnswer::where('user_id',$game_history->user_id)->where('history_id',$game_history->id)->where('question_id',$question['id'])->first();
-                    if($user_answer['option_id'])
-                    {
-                        $content = Option::where('question_id',$question['id'])->value('content');
-                    }
+                    $user_answers[$key]['answer_content'] = $user_answer['content'];
                     $user_answers[$key]['question_content'] = $question['content'];
-                    $user_answers[$key]['answer_content'] = !empty($user_answer['content'] )? $user_answer['content'] : $content;
+
+                    $options = Option::where('question_id',$question['id'])->get()->toArray();
+                    $i = 0;
+                    foreach ($options as $option_key => $option)
+                    {
+                        $i++;
+                        if($user_answer['option_id'] == $option['id'])
+                        {
+                            $options[$option_key]['selected_class'] = 'option_selected';
+                        }else{
+                            $options[$option_key]['selected_class'] = '';
+                        }
+                        $options[$option_key]['letter'] = config('common.letter.'.$i);
+                    }
+                    $user_answers[$key]['options'] = $options;
                 }
                 $data = compact('user_answers');
                 break;
