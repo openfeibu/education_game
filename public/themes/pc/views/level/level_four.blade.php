@@ -567,7 +567,14 @@
             fbAlert("{{ trans('messages.enter_answer') }}");
             return false;
         }
-        submit_option(5,0,answer);
+		var zanArr = []
+		$("#g4-park5 .zanItem").each(function(a,b){
+			if($(b).hasClass("active")){
+				zanArr.push(a+1)
+			}
+		})
+		
+        submit_option(6,0,answer,zanArr);
         g4Park5Out();
         g4Park6In();
     })
@@ -627,8 +634,9 @@
     //重来
     //dian zan
 	 $("#g4-park5 .zanItem").on("click",function(){
+
 		$(this).toggleClass("active")
-		})
+	})
 
 
     //结束

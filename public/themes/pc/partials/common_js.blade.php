@@ -1,9 +1,13 @@
 <script>
-    function submit_option(question_id,option_id,content)
+    function submit_option(question_id,option_id,content,strategy_slug)
     {
+		var parms = {'_token':"{!! csrf_token() !!}","question_id":question_id,"option_id":option_id,'content':content}
+		if(strategy_slug){
+			parms.strategy_slug = strategy_slug;
+		}
         $.ajax({
             url : "{{ route('pc.submit_option') }}",
-            data : {'_token':"{!! csrf_token() !!}","question_id":question_id,"option_id":option_id,'content':content},
+            data : parms,
             type : 'post',
             dataType : "json",
             success : function (data) {

@@ -1,7 +1,7 @@
 .fb-clearfix:after{content: "";width: 100%;height: 0;display: block;clear: both;}
 body{background: #f5f5f5;}
-.layui-side-menu{background:#20222A;width: 200px;overflow-x: hidden;}
-.layui-side-menu .layui-nav{margin-top: 5px}
+.layui-side-menu{background:#dfb262;width: 200px;overflow-x: hidden;}
+.layui-side-menu .layui-nav{margin-top: 5px;background:#dfb262}
 .layui-side-scroll{width: 220px;}
 .logo{height: 50px;text-align: center;line-height: 50px;color: #fff;width: 200px;font-size: 18px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.15)}
 .layui-header{background: #fff;height: 50px;    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
@@ -15,10 +15,13 @@ body{background: #f5f5f5;}
 .layui-header .layui-nav .layui-nav-mored {
 	border-color: transparent transparent #666
 }
-.layui-nav-bar{background: #666;height: 2px;}
-.layui-side-menu{z-index:1000;}
-.layui-nav-tree .layui-nav-item{background: #20222A;}
-.layui-nav-tree .layui-nav-item > a{height: 50px;line-height: 50px;font-size: 14px;}
+.layui-nav-bar{background-color: #c84060 !important;height: 2px;}
+.layui-nav-tree .layui-nav-child dd.layui-this a{background:#c84060}
+.layui-nav-tree .layui-this a,.layui-nav-tree .layui-this{background:#c84060 !important}
+
+.layui-side-menu{z-index:1000;background:#dfb262}
+.layui-nav-tree .layui-nav-item{background:#dfb262}
+.layui-nav-tree .layui-nav-item > a{height: 50px;line-height: 50px;font-size: 14px;color:#fff;}
 .layui-nav-tree .layui-nav-item > a i{margin-right: 15px;font-size: 16px;}
 .layui-nav-tree .layui-nav-item dl a{height: 45px;line-height: 45px;text-indent:30px;}
 .main {
@@ -54,7 +57,7 @@ body{background: #f5f5f5;}
 	font-style: normal;
 	font-size: 30px;
 	font-weight: 300;
-	color: #009688
+	color: #c84060
 }
 
 .fb-backlog-body:hover {
@@ -123,10 +126,47 @@ button.layui-close{
     -webkit-appearance: none;
 }
 
+.fb-nop-table{
+	padding:30px;
+}
+.fb-nop-table .layui-input-block{
+	margin-left:0;
+	padding:10px 0;
+	float:none;
+	display:block;
+	line-height:36px;
+}
+.fb-nop-table .layui-form-item{border-bottom:1px solid #eee;padding-bottom:10px}
+.fb-grade-item{
+	text-align:center;
+	color:#c84060
+	
+}
+.fb-grade-item p{
+	padding:5px 0;
+	font-size:14px;
+	font-weight:bold;
+}
+.fb-grade-item a{
+	border-radius:5px;
+}
 
-
-
-
-
+.fb-grade-item img{
+	width:100%;
+}
+.tit{
+	color: #fff;
+    font-size: 18px;
+    background: #c84060;
+	padding:10px 10px !important; 
+	border-radius:5px;
+	
+}
+.tit2{
+	color:#dfb262;
+	font-size:16px;
+	padding:0 !important;
+	
+}
 
 
