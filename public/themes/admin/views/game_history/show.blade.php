@@ -115,15 +115,18 @@
                         @foreach($user_answers as $key => $user_answer)
                             <div class="layui-form-item">
                                 <label class="layui-input-block tit">問題：{{ $user_answer['question_content'] }}</label>
+                                @if($user_answer['options'])
                                 @foreach($user_answer['options'] as $option_key => $option)
                                     <div class="layui-input-block option {{ $option['selected_class'] }}">
                                         {{ $option['letter'] }}.{{ $option['content'] }}
                                     </div>
                                 @endforeach
+                                @else
                                 @if($user_answer['answer_content'])
                                     <div class="layui-input-block">
                                         {{ $user_answer['answer_content'] }}
                                     </div>
+                                @endif
                                 @endif
                             </div>
                         @endforeach
