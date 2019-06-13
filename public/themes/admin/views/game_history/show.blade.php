@@ -105,7 +105,7 @@
                             <?php $i=0;?>
                             @foreach($level_four_strategies as $key => $strategy)
                             <?php $i++ ?>
-                            <div class="layui-input-block option {{ $strategy['selected_class'] }}">
+                            <div class="layui-input-block option {{ $strategy['selected_class'] }} zanItem" >
                                 {{ $i }}.{{ $strategy['content'] }}
                             </div>
                             @endforeach

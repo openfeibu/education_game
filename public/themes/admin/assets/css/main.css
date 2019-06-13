@@ -181,4 +181,8 @@ button.layui-close{
 	padding:5px 10px;
     border-radius:5px;
 }
-
+.layui-form-item .zanItem{margin-bottom:5px;}
+.layui-form-item .zanItem.option_selected{
+	padding-left:50px;
+	background:#21759e url("../img/zan.png") no-repeat 10px center/30px auto;
+}
