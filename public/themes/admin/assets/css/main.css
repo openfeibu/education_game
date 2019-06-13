@@ -19,11 +19,12 @@ body{background: #f5f5f5;}
 .layui-nav-tree .layui-nav-child dd.layui-this a{background:#c84060}
 .layui-nav-tree .layui-this a,.layui-nav-tree .layui-this{background:#c84060 !important}
 
-.layui-side-menu{z-index:1000;background:#dfb262}
-.layui-nav-tree .layui-nav-item{background:#dfb262}
+.layui-side-menu{z-index:1000;background:#21759e}
+.layui-nav-tree .layui-nav-item{background:#21759e}
 .layui-nav-tree .layui-nav-item > a{height: 50px;line-height: 50px;font-size: 14px;color:#fff;}
 .layui-nav-tree .layui-nav-item > a i{margin-right: 15px;font-size: 16px;}
 .layui-nav-tree .layui-nav-item dl a{height: 45px;line-height: 45px;text-indent:30px;}
+/* .layui-nav-tree .layui-nav-itemed{background:#c84060} */
 .main {
     position: absolute;
     left: 200px;
@@ -34,16 +35,19 @@ body{background: #f5f5f5;}
     width: auto;
     overflow: hidden;
     overflow-y: auto;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 .main_full{padding:0 15px 15px 15px;}
+.layui-card{
+	box-shadow:none;
+}
 .fb-backlog .fb-backlog-body {
 	display: block;
-	padding: 10px 15px;
-	background-color: #f8f8f8;
+	padding: 20px 20px;
+	background-color: #fff;
 	color: #999;
-	border-radius: 2px;
+	border-radius: 10px;
 	transition: all .3s;
 	-webkit-transition: all .3s
 }
@@ -131,7 +135,7 @@ button.layui-close{
 }
 .fb-nop-table .layui-input-block{
 	margin-left:0;
-	padding:10px 0;
+	padding:10px 10px;
 	float:none;
 	display:block;
 	line-height:36px;
@@ -160,18 +164,21 @@ button.layui-close{
     background: #c84060;
 	padding:10px 10px !important; 
 	border-radius:5px;
+	margin-bottom:5px;
 	
 }
 .tit2{
-	color:#dfb262;
+	color:#21759e;
 	font-size:16px;
+	font-weight:bold;
 	padding:0 !important;
 	
 }
 .option_selected{
 
-    background: #eee;
-    padding:2px 2px !important;
+    background: #21759e;
+    color:#fff;
+	padding:5px 10px;
     border-radius:5px;
 }
 

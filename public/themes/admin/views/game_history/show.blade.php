@@ -93,7 +93,7 @@
                                     </div>
                                 @endforeach
                                 @if($user_answer['answer_content'])
-                                    <div class="layui-input-block">
+                                    <div class="layui-input-block ">
                                         @if($user_answer['options']) 其他答案：@endif{{ $user_answer['answer_content'] }}
                                     </div>
                                 @endif

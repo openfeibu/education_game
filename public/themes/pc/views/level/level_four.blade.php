@@ -482,15 +482,17 @@
         }else if(p4answer == "E"){
             if($("[name='g4-park3-input']").val().length == 0){
                 fbAlert("{{ trans('messages.enter_e_answer') }}");
-                answer = $("[name='g4-park3-input']").val();
+              
                 return false;
             }else{
+				 answer = $("[name='g4-park3-input']").val();
                 g4Park3Out();
                 g4Park4In();
             }
         }else{
             fbAlert("{{ trans('messages.choose_option') }}");
         }
+		
         submit_option(question_id,option_id,answer);
     })
     $("#d2")[0].addEventListener('ended',function () {
