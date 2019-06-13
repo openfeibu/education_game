@@ -27,9 +27,7 @@
                         <div class="layui-col-md10">
                             @foreach($permissions as $f_key => $father)
                                 <div class="top-permission layui-col-md10">
-                                    <a href="javascript:;" class="display-sub-permission-toggle">
-                                        <i class="layui-icon layui-icon-down"></i>
-                                    </a>
+                                   
                                     <input type="checkbox" name="permissions[]" value="{{ $father->id }}" class="top-permission-checkbox" lay-skin="primary" title="{{ $father->name }}" lay-filter="top-permission-checkbox" {{ (!$role->hasPermission($father->id)) ? : 'checked'}}>
                                 </div>
                                 <div class="sub-permissions layui-col-md9 layui-col-md-offset1">
