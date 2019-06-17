@@ -31,6 +31,8 @@
                 // console.log(data.id)
                 window.location.href=main_url+'/'+data.id
                 // layer.alert('编辑行：<br>'+ JSON.stringify(data))
+            } else if(obj.event === 'user_game_history'){
+                window.location.href="{{ guard_url('game_history') }}?user_id="+data.id;
             }
         });
         table.on('edit(fb-table)', function(obj){

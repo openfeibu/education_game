@@ -14,7 +14,7 @@ return [
     'name'           => '管理系統',
     'name.html'      => '<b>Lava</b>lite',
     'name.short'     => '<b>L</b>l',
-    'admin.panel'    => '管理面板',
+    'admin.panel'    => '數據概覽',
     'dashboard'      => '儀錶盤',
 
     'version'        => '<b>Version</b> Develop',

@@ -42,7 +42,7 @@ class GameHistoryResourceController extends BaseController
                 ->join('levels','levels.id','=','game_histories.level_id');
             if($user_id)
             {
-                $game_histories = $game_histories->where('.game_histories.user_id',$user_id);
+                $game_histories = $game_histories->where('game_histories.user_id',$user_id);
             }
             $game_histories = $game_histories->orderBy('game_histories.id','desc')
                 ->paginate($limit);
@@ -56,6 +56,7 @@ class GameHistoryResourceController extends BaseController
         }
 
         return $this->response->title(trans('game.name'))
+            ->data(compact('user_id'))
             ->view('game_history.index')
             ->output();
     }

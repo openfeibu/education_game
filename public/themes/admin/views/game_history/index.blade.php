@@ -27,6 +27,7 @@
 
 <script>
     var main_url = "{{guard_url('game_history')}}";
+    var index_url =  "{{guard_url('game_history')}}?user_id={{ $user_id }}";
     var delete_all_url = "{{guard_url('game_history/destroyAll')}}";
     layui.use(['jquery','element','table'], function(){
         var table = layui.table;
@@ -34,7 +35,7 @@
         var $ = layui.$;
         table.render({
             elem: '#fb-table'
-            ,url: main_url
+            ,url: index_url
             ,cols: [[
                 {checkbox: true, fixed: true}
                 ,{field:'id',title:'ID', width:80, sort: true}

@@ -26,6 +26,7 @@
 </div>
 
 <script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-sm" lay-event="user_game_history">查看遊戲紀錄</a>
     <a class="layui-btn layui-btn-sm" lay-event="edit">{{ trans('app.edit') }}</a>
     <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">{{ trans('app.delete') }}</a>
 </script>
@@ -45,7 +46,7 @@
                 {checkbox: true, fixed: true}
                 ,{field:'id',title:'ID', width:80, sort: true}
                 ,{field:'name',title:'{{ trans('user.label.name') }}'}
-                ,{field:'score',title:'{{ trans('app.actions') }}', width:200, align: 'right',toolbar:'#barDemo'}
+                ,{field:'score',title:'{{ trans('app.actions') }}', width:300, align: 'right',toolbar:'#barDemo'}
             ]]
         ,id: 'fb-table'
         ,page: true

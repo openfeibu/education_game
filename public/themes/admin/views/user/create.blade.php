@@ -11,22 +11,22 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans("user.label.name") }}</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="name" value="{{ $user->name }}" lay-verify="title" autocomplete="off" placeholder="{{ trans('user.please_input') }}{{ trans("user.label.name") }}" class="layui-input" required>
+                            <input type="text" name="name" value="{{ $user->name }}" lay-verify="title" autocomplete="off" placeholder="{{ trans('app.please_input') }}{{ trans("user.label.name") }}" class="layui-input" required>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans("user.label.password") }}</label>
                         <div class="layui-input-inline">
-                            <input type="password" name="password" placeholder="{{ trans('user.please_input') }}{{ trans("user.label.password") }}" autocomplete="off" class="layui-input">
+                            <input type="password" name="password" placeholder="{{ trans('app.please_input') }}{{ trans("user.label.password") }}" autocomplete="off" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">{{ trans('user.please_input') }}密码，至少六位数</div>
+                        <div class="layui-form-mid layui-word-aux">{{ trans('app.please_input') }}{{ trans("user.label.password") }}，至少六位數</div>
                     </div>
 
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('user.submit') }}</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1">{{ trans('app.submit') }}</button>
                         </div>
                     </div>
                     {!!Form::token()!!}

@@ -9,29 +9,27 @@
                         <div carousel-item="">
                             <ul class="layui-row fb-clearfix layui-col-space5">
                                 <li class="layui-col-xs3">
-                                    @permission(home())
                                     <a lay-href="" class="fb-backlog-body">
-                                        <h3>会员量</h3>
-                                        <p><cite>66</cite></p>
-                                    </a>
-                                    @endpermission
-                                </li>
-                                <li class="layui-col-xs3">
-                                    <a lay-href="" class="fb-backlog-body">
-                                        <h3>待审帖子</h3>
-                                        <p><cite>12</cite></p>
+                                        <h3>用戶量</h3>
+                                        <p><cite>{{ $user_count }}</cite></p>
                                     </a>
                                 </li>
                                 <li class="layui-col-xs3">
                                     <a lay-href="" class="fb-backlog-body">
-                                        <h3>待审商品</h3>
-                                        <p><cite>99</cite></p>
+                                        <h3>遊戲次數</h3>
+                                        <p><cite>{{ $game_count }}</cite></p>
                                     </a>
                                 </li>
                                 <li class="layui-col-xs3">
                                     <a lay-href="" class="fb-backlog-body">
-                                        <h3>待发货</h3>
-                                        <p><cite>20</cite></p>
+                                        <h3>今日活躍用戶</h3>
+                                        <p><cite>{{ $today_active_user_count }}</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-xs3">
+                                    <a lay-href="" class="fb-backlog-body">
+                                        <h3>今日遊戲次數</h3>
+                                        <p><cite>{{ $today_game_count }}</cite></p>
                                     </a>
                                 </li>
                             </ul>

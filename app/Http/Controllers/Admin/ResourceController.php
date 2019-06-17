@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\GameHistory;
+use App\Models\User;
 use Route;
 use App\Http\Controllers\Admin\Controller as BaseController;
 use App\Traits\AdminUser\AdminUserPages;
@@ -32,7 +34,12 @@ class ResourceController extends BaseController
      */
     public function home()
     {
+        $user_count = User::count();
+        $game_count = GameHistory::count();
+        $today_active_user_count = GameHistory::where('created_at','>',date('Y-m-d'))->groupBy('user_id')->get()->count();
+        $today_game_count = GameHistory::where('created_at','>',date('Y-m-d'))->count();
         return $this->response->title(trans('app.admin.panel'))
+            ->data(compact('user_count','game_count','today_active_user_count','today_game_count'))
             ->view('home')
             ->output();
     }
