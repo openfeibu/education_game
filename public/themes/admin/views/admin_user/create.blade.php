@@ -18,9 +18,9 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">{{ trans("admin_user.label.password") }}</label>
                         <div class="layui-input-inline">
-                            <input type="password" name="password" placeholder="{{ trans('user.please_input') }}{{ trans("admin_user.label.password") }}" autocomplete="off" class="layui-input">
+                            <input type="password" name="password" placeholder="{{ trans('app.please_input') }}{{ trans("admin_user.label.password") }}" autocomplete="off" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">{{ trans('user.please_input') }}密码，至少六位数</div>
+                        <div class="layui-form-mid layui-word-aux">{{ trans('app.please_input') }}{{ trans("admin_user.label.password") }}，至少六位數</div>
                     </div>
 
                     <div class="layui-form-item">
