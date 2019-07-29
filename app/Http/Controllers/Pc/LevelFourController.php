@@ -35,7 +35,7 @@ class LevelFourController extends BaseController
            ->whereNotNull('user_answers.content')
            ->where('user_id','<>',Auth::user()->id)
            ->orderBy('user_answers.id','desc')
-           ->paginate(10);
+           ->paginate(20);
        $data =  $strategies ? $strategies->toArray()['data'] : [];
        return [
            'code' => 200,
