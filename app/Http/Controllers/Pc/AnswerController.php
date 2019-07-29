@@ -147,7 +147,7 @@ class AnswerController extends BaseController
         UserAnswer::create([
             'user_id' => $user_id,
             'question_id' => $question_id,
-            'content' => $request->input('content'),
+            'content' => $request->input('content',''),
         ]);
         return $this->response->message(trans('messages.submit_success'))
             ->status("success")
