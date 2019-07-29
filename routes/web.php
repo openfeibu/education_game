@@ -67,6 +67,7 @@ Route::group([
     Route::get('/level_one/user_video_child_category','LevelOneController@getUserVideoChildCategory')->name('level.user_video_child_category');
     Route::get('/level_one/user_video_tolerate_grade','LevelOneController@getUserTolerateGrade')->name('level.user_video_tolerate_grade');
 
+    Route::get('/strategies','LevelFourController@getStrategies')->name('level.strategies');
 
     Route::get('/user/login','Auth\LoginController@showLoginForm')->name('login');
     Route::post('ajax_login', 'Auth\LoginController@ajaxLogin')->name('ajax_login');
